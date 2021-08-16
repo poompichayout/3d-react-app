@@ -8,6 +8,7 @@ const LandingDisplayCard = ({ src, title }) => {
       <ClickableCard
         style={{ width: 300 }}
         cover={<img alt="example" src={src} />}
+        hoverable
       >
         <Card.Meta
           title={title}
@@ -19,7 +20,6 @@ const LandingDisplayCard = ({ src, title }) => {
 };
 
 const ClickableCard = styled(Card)`
-  cursor: pointer;
   transition: 0.3s;
 
   &:hover {

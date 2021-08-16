@@ -1,22 +1,36 @@
 import React, { useState } from "react";
-import { Col, Radio, Row, Space, Typography, Slider } from "antd";
+import { Col, Radio, Row, Space, Typography, Slider, Button } from "antd";
 import CathLabCanvas from "src/models/CathLabCanvas";
 import Model from "src/models/Bedwhuman";
 import { Helmet } from "react-helmet";
 
 import styled from "styled-components";
+import Modal from "antd/lib/modal/Modal";
 
 const Angiogram = () => {
   const [turnOption, setTurnOption] = useState("AP");
   const [x, setX] = useState("CRANIAL");
   const [zDegree, setZDegree] = useState(30);
   const [xDegree, setXDegree] = useState(0);
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
-  function onChange(e) {
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleOk = () => {
+    setIsModalVisible(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
+
+  const onChange = (e) => {
     setTurnOption(e.target.value);
   }
 
-  function onCaudalChange(e) {
+  const onCaudalChange = (e) => {
     setX(e.target.value);
   }
 
@@ -36,13 +50,6 @@ const Angiogram = () => {
               xOption={x}
               xdegree={xDegree}
             />
-            {/* <CathLab
-              position={[0, -4.25, -1.5]}
-              option={turnOption}
-              zdegree={zDegree}
-              xOption={x}
-              xdegree={xDegree}
-            /> */}
           </CathLabCanvas>
         </Col>
         <Col xs={20} md={6}>
@@ -96,16 +103,36 @@ const Angiogram = () => {
               <Typography.Title level={3}>{x}</Typography.Title>
               <Slider
                 min={1}
-                max={x === "CRANIAL"? 25:60}
+                max={x === "CRANIAL" ? 25 : 60}
                 defaultValue={xDegree}
                 value={xDegree}
                 onChange={(value) => setXDegree(value)}
               />
+              <SubmitButton
+                shape="round"
+                type="primary"
+                size="large"
+                onClick={showModal}
+              >
+                Submit
+              </SubmitButton>
             </Col>
           </Row>
         </Col>
         <Col md={3} />
       </RowStyled>
+      <Modal
+        title={
+          turnOption + " " + capitalizeFirstLetter(x)
+        }
+        visible={isModalVisible}
+        onOk={handleOk}
+        onCancel={handleCancel}
+      >
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </Modal>
     </div>
   );
 };
@@ -117,5 +144,14 @@ const RowStyled = styled(Row)`
   min-height: 80vh;
   padding: 4em;
 `;
+
+const SubmitButton = styled(Button)`
+  margin-top: 2em;
+  float: right;
+`;
+
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+}
 
 export default Angiogram;

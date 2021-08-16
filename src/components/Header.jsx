@@ -12,17 +12,18 @@ const Header = () => {
       <Col xs={20} md={8}>
         <Row>
           <ContentRow>
-            <Typography.Title>3D Model Viewer</Typography.Title>
+            <Typography.Title>Cardiac Catheterization</Typography.Title>
             <Typography.Paragraph>
-              Ant admin is a powerful admin template built with Ant Design
-              guideline in mind, it comes with tons of useful features and more
-              on the way.
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita
+              quod id voluptatem veniam, accusantium consequatur, itaque at
+              excepturi quaerat officiis, maxime ullam alias adipisci.
             </Typography.Paragraph>
           </ContentRow>
-          <LandingButton>PLAY IT!!</LandingButton>
+          <LandingButton href="/app/angiogram">Angiogram</LandingButton>
+          <LandingButton href="/app/vassel">Coronary arteries</LandingButton>
         </Row>
       </Col>
-      <Col xs={20} md={8} style={{ paddingTop: "4em"}}>
+      <Col xs={20} md={8} style={{ paddingTop: "4em" }}>
         <Row justify="center" align="middle">
           <LandingDisplayCard src={angio} title="Angiogram" />
         </Row>
