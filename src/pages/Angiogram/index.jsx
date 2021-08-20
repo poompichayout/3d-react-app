@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { Col, Radio, Row, Space, Typography, Slider, Button } from "antd";
 import CathLabCanvas from "src/models/CathLabCanvas";
 import Model from "src/models/Bedwhuman";
+import ContentModal from "src/components/ContentModal";
 import { Helmet } from "react-helmet";
 
 import styled from "styled-components";
-import Modal from "antd/lib/modal/Modal";
 
 const Angiogram = () => {
   const [turnOption, setTurnOption] = useState("AP");
@@ -121,18 +121,13 @@ const Angiogram = () => {
         </Col>
         <Col md={3} />
       </RowStyled>
-      <Modal
-        title={
-          turnOption + " " + capitalizeFirstLetter(x)
-        }
+      <ContentModal
         visible={isModalVisible}
         onOk={handleOk}
         onCancel={handleCancel}
-      >
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-      </Modal>
+        width={"100%"}
+        type={turnOption.toLowerCase() + "-" + x.toLowerCase()}
+      />
     </div>
   );
 };
@@ -149,9 +144,5 @@ const SubmitButton = styled(Button)`
   margin-top: 2em;
   float: right;
 `;
-
-function capitalizeFirstLetter(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
-}
 
 export default Angiogram;
