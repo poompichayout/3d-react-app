@@ -20,7 +20,7 @@ const Header = () => {
             </Typography.Paragraph>
           </ContentRow>
           <LandingButton href="/app/angiogram">Angiogram</LandingButton>
-          <LandingButton href="/app/vassel">Coronary arteries</LandingButton>
+          <LandingButton href="/app/coronary_arteries">Coronary arteries</LandingButton>
         </Row>
       </Col>
       <Col xs={20} md={8} style={{ paddingTop: "4em" }}>

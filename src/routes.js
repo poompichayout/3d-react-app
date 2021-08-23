@@ -10,7 +10,7 @@ const routes = [
     children: [
       { path: "/", element: <Home /> },
       { path: "/app/angiogram", element: <Angiogram /> },
-      { path: "/app/vassel", element: <Vassel /> },
+      { path: "/app/coronary_arteries", element: <Vassel /> },
     ],
   },
 ];

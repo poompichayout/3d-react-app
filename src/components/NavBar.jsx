@@ -31,7 +31,7 @@ const NavBar = () => {
                 <a href="/app/angiogram">Angiogram</a>
               </Menu.Item>
               <Menu.Item key="setting:2">
-                <a href="/app/vassel">Coronary arteries</a>
+                <a href="/app/coronary_arteries">Coronary arteries</a>
               </Menu.Item>
             </Menu.ItemGroup>
           </SubMenu>

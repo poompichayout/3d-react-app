@@ -8,7 +8,7 @@ function Home() {
   return (
     <>
       <Helmet>
-        <title>Home - Angiogram</title>
+        <title>Home - Cardiac Catheterization</title>
         <meta name="description" content="Helmet application" />
       </Helmet>
       <Header />
