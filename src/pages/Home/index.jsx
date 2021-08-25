@@ -1,6 +1,6 @@
 import React from "react";
 
-import Header from "src/components/Header";
+import HeaderNew from "src/components/HeaderNew";
 import { Helmet } from "react-helmet";
 
 
@@ -10,7 +10,7 @@ function Home() {
       <Helmet>
         <title>Home - Cardiac Catheterization</title>
       </Helmet>
-      <Header />
+      <HeaderNew />
     </>
   );
 }

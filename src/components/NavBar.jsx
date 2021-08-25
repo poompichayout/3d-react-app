@@ -33,6 +33,7 @@ const NavBar = () => {
           >
             <Menu.ItemGroup title="Module">
               <SubMenu
+                key="angiogram"
                 title="Angiogram"
                 onTitleClick={() => (window.location.href = "/app/angiogram")}
               >
@@ -44,6 +45,7 @@ const NavBar = () => {
                 <Menu.Item key="angiogram:6">AP Cranial</Menu.Item>
               </SubMenu>
               <SubMenu
+                key="arteries"
                 title="Coronary arteries"
                 onTitleClick={() => (window.location.href = "/app/coronary_arteries")}
               >
