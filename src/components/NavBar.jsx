@@ -53,9 +53,9 @@ const NavBar = () => {
                 <Menu.Item key="arteries:4">Septal</Menu.Item>
                 <Menu.Item key="arteries:5">Diagonal</Menu.Item>
                 <Menu.Item key="arteries:6">RCA</Menu.Item>
-                <Menu.Item key="arteries:6">RMA</Menu.Item>
-                <Menu.Item key="arteries:6">PDA</Menu.Item>
-                <Menu.Item key="arteries:6">PL</Menu.Item>
+                <Menu.Item key="arteries:7">RMA</Menu.Item>
+                <Menu.Item key="arteries:8">PDA</Menu.Item>
+                <Menu.Item key="arteries:9">PL</Menu.Item>
               </SubMenu>
             </Menu.ItemGroup>
           </SubMenu>

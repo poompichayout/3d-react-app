@@ -24,7 +24,6 @@ const Vassel = () => {
     <div>
       <Helmet>
         <title>Coronary Arteries - Cardiac Catheterization</title>
-        <meta name="description" content="Helmet application" />
       </Helmet>
       <RowStyled justify="center">
         <Col xs={24} md={15} style={{ minHeight: "60vh" }}>

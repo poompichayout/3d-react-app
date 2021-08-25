@@ -9,7 +9,6 @@ function Home() {
     <>
       <Helmet>
         <title>Home - Cardiac Catheterization</title>
-        <meta name="description" content="Helmet application" />
       </Helmet>
       <Header />
     </>
