@@ -11,10 +11,15 @@ const HeartContentModal = ({ ...props }) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const showModal = (e) => {
-    if(e.target.innerText === "Distal: LAO cranial") {
+    if (e.target.innerText === "Distal: LAO cranial") {
       setType("lao-cranial");
     } else {
-      setType(e.target.innerText.split(" ").map(value => value.toLowerCase()).join("-"))
+      setType(
+        e.target.innerText
+          .split(" ")
+          .map((value) => value.toLowerCase())
+          .join("-")
+      );
     }
     setIsModalVisible(true);
   };
@@ -34,6 +39,7 @@ const HeartContentModal = ({ ...props }) => {
   return (
     <>
       <Modal
+        style={{ top: 20 }}
         {...props}
         footer={[
           <Button key="back" type="primary" onClick={props.onOk}>
@@ -65,13 +71,24 @@ const HeartContentModal = ({ ...props }) => {
               </li>
               <li key={7}>
                 <Typography.Text>
-                  <b>Importance in cardiovascular diseases:</b>
-
+                  {content.defects ? (
+                    <b>Importance in cardiovascular defects:</b>
+                  ) : null}
+                  {content.defects?.map((value, index) => (
+                    <Typography.Paragraph key={index}>
+                      {value}
+                    </Typography.Paragraph>
+                  ))}
+                </Typography.Text>
+              </li>
+              <li key={9}>
+                <Typography.Text>
                   <ul>
                     Best view at:
-                    {content.diseases.map((value, index) => (
+                    {content.best_views.map((value, index) => (
                       <li key={index}>
-                        {(props.type === "RCA" || props.type === "LM") && index === 0 ? (
+                        {(props.type === "RCA" || props.type === "LM") &&
+                        index === 0 ? (
                           value
                         ) : (
                           <Link underline to="#" onClick={showModal}>

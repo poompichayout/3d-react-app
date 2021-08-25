@@ -183,7 +183,7 @@ const columns = [
     key: "name",
   },
   {
-    title: "Description",
+    title: "Best Angiographic View",
     dataIndex: "description",
     key: "description",
   },

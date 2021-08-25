@@ -38,10 +38,9 @@ const Angiogram = () => {
     <div>
       <Helmet>
         <title>Angiogram - Cardiac Catheterization</title>
-        <meta name="description" content="Helmet application" />
       </Helmet>
       <RowStyled justify="center">
-        <Col xs={24} md={15} style={{ minHeight: "60vh" }}>
+        <Col xs={22} md={15} style={{ minHeight: "60vh" }}>
           <CathLabCanvas>
             <Model
               position={[0, -4.25, -1.5]}
@@ -52,11 +51,11 @@ const Angiogram = () => {
             />
           </CathLabCanvas>
         </Col>
-        <Col xs={20} md={6}>
-          <Row justify="center" align="middle">
-            <Col xs={20}>
+        <Col xs={20} md={8}>
+          <Row justify="center" align="middle" style={{ padding: "4em 0 4em 0"}}>
+            <Col xs={24}>
               <Typography.Title level={3}>
-                Select angiographic views
+                Select Angiographic Views
               </Typography.Title>
               <Radio.Group
                 onChange={onChange}
@@ -75,8 +74,8 @@ const Angiogram = () => {
                 </Space>
               </Radio.Group>
             </Col>
-            <Col xs={20} style={{ marginTop: "2em" }}>
-              <Typography.Title level={3}>Select an option</Typography.Title>
+            <Col xs={24} style={{ marginTop: "2em" }}>
+              <Typography.Title level={3}>Select an Angulation</Typography.Title>
               <Radio.Group
                 onChange={onCaudalChange}
                 defaultValue="CRANIAL"
@@ -89,7 +88,7 @@ const Angiogram = () => {
                 </Space>
               </Radio.Group>
             </Col>
-            <Col xs={20} style={{ marginTop: "2em" }}>
+            <Col xs={24} style={{ marginTop: "2em" }}>
               <Typography.Title level={3}>Select degree angle</Typography.Title>
               <Typography.Title level={3}>{turnOption}</Typography.Title>
               <Slider
@@ -137,7 +136,6 @@ const RowStyled = styled(Row)`
   background-color: #fafafa;
   text-align: center;
   min-height: 80vh;
-  padding: 4em;
 `;
 
 const SubmitButton = styled(Button)`

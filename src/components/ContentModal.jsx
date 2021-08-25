@@ -12,6 +12,7 @@ const ContentModal = ({ ...props }) => {
 
   return (
     <Modal
+      style={{ top: 20 }}
       {...props}
       footer={[
         <Button key="back" type="primary" onClick={props.onOk}>
