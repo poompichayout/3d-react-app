@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import Flag from "react-world-flags";
 import styled from "styled-components";
 import { Col, Row, Space, Switch, Typography } from "antd";
+import Abbreviation from "./Abbreviation";
 
 function HowToUse() {
   const [lang, setLang] = useState(true);
@@ -111,19 +112,30 @@ function HowToUse() {
                       <li>
                         เลือกข้อมูลของภาพฟลูออโรสโคปิคที่ต้องการดู
                         <ol>
-                          <li>เลือก Angiographic View<ul>
+                          <li>
+                            เลือก Angiographic View
+                            <ul>
                               <li>AP</li>
                               <li>LAO</li>
                               <li>RAO</li>
-                            </ul></li>
-                          <li>เลือก Angulation<ul>
+                            </ul>
+                          </li>
+                          <li>
+                            เลือก Angulation
+                            <ul>
                               <li>Cranial</li>
                               <li>Caudal</li>
-                            </ul></li>
-                          <li>เลือก Degree Angle<ul>
-                              <li>มุม Angiographic View ตั้งแต่ 0 ถึง 90 องศา</li>
+                            </ul>
+                          </li>
+                          <li>
+                            เลือก Degree Angle
+                            <ul>
+                              <li>
+                                มุม Angiographic View ตั้งแต่ 0 ถึง 90 องศา
+                              </li>
                               <li>มุม Angulation ตั้งแต่ 0 ถึง 25 องศา</li>
-                            </ul></li>
+                            </ul>
+                          </li>
                         </ol>
                       </li>
                       <li>
@@ -152,6 +164,9 @@ function HowToUse() {
               </div>
             )}
           </Row>
+        </Col>
+        <Col xs={24} md={18} style={{ marginTop: "4em"}}>
+          <Abbreviation />
         </Col>
       </RowStyled>
     </>

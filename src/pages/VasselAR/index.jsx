@@ -1,24 +1,12 @@
-import React, { useState } from "react";
-import { Button, Col, Row, Space, Table, Typography } from "antd";
-import HeartCanvas from "src/models/HeartCanvas";
+import React from "react";
+import { Col, Row, Table, Typography } from "antd";
 import Model from "src/models/Heart";
-import HeartContentModal from "src/components/HeartContentModal";
 import { Helmet } from "react-helmet";
 
 import styled from "styled-components";
+import HeartARCanvas from "src/models/HeartARCanvas";
 
 const Vassel = () => {
-  const [type, setType] = useState("LM");
-  const [isModalVisible, setIsModalVisible] = useState(false);
-
-  const showModal = (e) => {
-    setType(e.target.innerText);
-    setIsModalVisible(true);
-  };
-
-  const handleOk = () => {
-    setIsModalVisible(false);
-  };
 
   return (
     <div>
@@ -26,48 +14,12 @@ const Vassel = () => {
         <title>Coronary Arteries - Cardiac Catheterization</title>
       </Helmet>
       <RowStyled justify="center">
-        <Col xs={24} md={15} style={{ minHeight: "60vh" }}>
-          <HeartCanvas>
-            <Model />
-          </HeartCanvas>
-        </Col>
         <Col xs={24} md={15}>
-          <Button onClick={() => window.location.href = "/app/coronary_ar"}>Start In AR</Button>
+          <HeartARCanvas>
+            <Model position={[0,0,0]} rotation={[0,0,0]} />
+          </HeartARCanvas>
         </Col>
       </RowStyled>
-      <Row justify="center" style={{ backgroundColor: "#fafafa" }}>
-        <Col xs={20} align="middle">
-          <Space size={[8, 16]} wrap>
-            <Button type="primary" onClick={showModal}>
-              LM
-            </Button>
-            <Button type="primary" onClick={showModal}>
-              LAD
-            </Button>
-            <Button type="primary" onClick={showModal}>
-              LCx
-            </Button>
-            <Button type="primary" onClick={showModal}>
-              Septal branch
-            </Button>
-            <Button type="primary" onClick={showModal}>
-              Diagonal branch
-            </Button>
-            <Button type="primary" onClick={showModal}>
-              RCA
-            </Button>
-            <Button type="primary" onClick={showModal}>
-              RMA
-            </Button>
-            <Button type="primary" onClick={showModal}>
-              PDA
-            </Button>
-            <Button type="primary" onClick={showModal}>
-              PL
-            </Button>
-          </Space>
-        </Col>
-      </Row>
 
       <RowStyled justify="center">
         <Col xs={24} md={15}>
@@ -93,13 +45,6 @@ const Vassel = () => {
           />
         </Col>
       </RowStyled>
-      <HeartContentModal
-        visible={isModalVisible}
-        onOk={handleOk}
-        onCancel={handleOk}
-        width={"100%"}
-        type={type}
-      />
     </div>
   );
 };

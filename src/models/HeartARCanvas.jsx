@@ -1,12 +1,24 @@
-import React, { Suspense } from "react";
-import { ARCanvas } from '@react-three/xr'
+import React, { Suspense, useRef } from "react";
+import { ARCanvas, DefaultXRControllers, useHitTest } from "@react-three/xr";
 import { Loader } from "@react-three/drei";
 
+function HitTestExample({ children }) {
+  const ref = useRef();
+  useHitTest((hit) => {
+    hit.decompose(
+      ref.current.position,
+      ref.current.rotation,
+      ref.current.scale
+    );
+  });
+
+  return <mesh ref={ref}>{children}</mesh>;
+}
 
 const HeartARCanvas = ({ children }) => {
   return (
     <>
-      <ARCanvas shadows camera={{ position: [0, 1, 1], fov: 15 }}>
+      <ARCanvas sessionInit={{ requiredFeatures: ["hit-test"] }}>
         <ambientLight intensity={0.4} />
         <pointLight position={[-10, -10, 5]} intensity={2} />
         <pointLight position={[0, 0.5, -1]} distance={1} intensity={2} />
@@ -14,8 +26,9 @@ const HeartARCanvas = ({ children }) => {
         <directionalLight position={[-10, -10, -5]} intensity={1} />
 
         <Suspense fallback={null}>
-          {children}
+          <HitTestExample>{children}</HitTestExample>
         </Suspense>
+        <DefaultXRControllers />
       </ARCanvas>
       <Loader />
     </>

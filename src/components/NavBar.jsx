@@ -37,27 +37,37 @@ const NavBar = () => {
                 title="Angiogram"
                 onTitleClick={() => (window.location.href = "/app/angiogram")}
               >
-                <Menu.Item key="angiogram:1">RAO Caudal</Menu.Item>
-                <Menu.Item key="angiogram:2">RAO Cranial</Menu.Item>
-                <Menu.Item key="angiogram:3">LAO Caudal</Menu.Item>
-                <Menu.Item key="angiogram:4">LAO Cranial</Menu.Item>
-                <Menu.Item key="angiogram:5">AP Caudal</Menu.Item>
-                <Menu.Item key="angiogram:6">AP Cranial</Menu.Item>
+                {angiogramMenu.map((value, index) => (
+                  <Menu.Item
+                    key={`angiogram:${index}`}
+                    onClick={() =>
+                      (window.location.href = `/app/angiogram/info/${value
+                        .split(" ")
+                        .map((x) => x.toLowerCase())
+                        .join("-")}`)
+                    }
+                  >
+                    {value}
+                  </Menu.Item>
+                ))}
               </SubMenu>
               <SubMenu
                 key="arteries"
                 title="Coronary arteries"
-                onTitleClick={() => (window.location.href = "/app/coronary_arteries")}
+                onTitleClick={() =>
+                  (window.location.href = "/app/coronary_arteries")
+                }
               >
-                <Menu.Item key="arteries:1">LM</Menu.Item>
-                <Menu.Item key="arteries:2">LAD</Menu.Item>
-                <Menu.Item key="arteries:3">LCx</Menu.Item>
-                <Menu.Item key="arteries:4">Septal</Menu.Item>
-                <Menu.Item key="arteries:5">Diagonal</Menu.Item>
-                <Menu.Item key="arteries:6">RCA</Menu.Item>
-                <Menu.Item key="arteries:7">RMA</Menu.Item>
-                <Menu.Item key="arteries:8">PDA</Menu.Item>
-                <Menu.Item key="arteries:9">PL</Menu.Item>
+                {arteriesMenu.map((value, index) => (
+                  <Menu.Item
+                    key={`arteries:${index}`}
+                    onClick={() =>
+                      (window.location.href = `/app/coronary_arteries/info/${value}`)
+                    }
+                  >
+                    {value}
+                  </Menu.Item>
+                ))}
               </SubMenu>
             </Menu.ItemGroup>
           </SubMenu>
@@ -87,5 +97,26 @@ const NavBar = () => {
     </Row>
   );
 };
+
+const angiogramMenu = [
+  "RAO Caudal",
+  "RAO Cranial",
+  "LAO Caudal",
+  "LAO Cranial",
+  "AP Caudal",
+  "AP Cranial",
+];
+
+const arteriesMenu = [
+  "LM",
+  "LAD",
+  "LCx",
+  "Septal branch",
+  "Diagonal branch",
+  "RCA",
+  "RMA",
+  "PDA",
+  "PL",
+];
 
 export default NavBar;
