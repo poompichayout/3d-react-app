@@ -6,7 +6,7 @@
     "defects": ["Atherosclerosis is a condition that involves thickening of the arterial walls via cholesterol and fat deposits that build up along the endoluminal surface of the arteries. With severe disease, these plaques may become calcified, increase in size, and eventually cause significant stenosis"],
     "best_views": ["AP", "LAO cranial", "LAO caudal"],
     "subtitle": "AP",
-    "picture_path": "/images/ap.png"
+    "picture_path": "./images/ap.png"
   },
   "LAD": {
     "title": "LAD: Left Anterior Descending", 
@@ -16,7 +16,7 @@
     "defects": ["The LAD artery is the most commonly occluded of the coronary arteries. It provides the major blood supply to the interventricular septum, and thus bundle branches of the conducting system. Hence, blockage of this artery due to coronary artery disease can lead to impairment or death (infarction) of the conducting system. The result is a \"block\" of impulse conduction between the atria and the ventricles known as \"right/left bundle branch block.\""],
     "best_views": ["RAO Cranial"],
     "subtitle": "RAO Cranial",
-    "picture_path": "/images/rao-cranial.png"
+    "picture_path": "./images/rao-cranial.png"
   },
   "LCx": {
     "title": "LCx : Left circumflex arteries",
@@ -24,7 +24,7 @@
     "function": "supplies most of the left atrium: the posterior and lateral free walls of the left ventricle, and part of the anterior papillary muscle. In 40-50% of hearts the circumflex artery supplies the artery to the SA node",
     "best_views": ["LAO Caudal"],
     "subtitle": "LAO Caudal",
-    "picture_path": "/images/lao-caudal.png"
+    "picture_path": "./images/lao-caudal.png"
   },
   "Septal branch": {
     "title": "Septal branch",
@@ -32,7 +32,7 @@
     "function": "They provide the main blood supply to the anterior interventricular septum. A smaller posterior section is also supplied from the posterior descending artery instead (see coronary arterial dominance).",
     "best_views": ["LAO Cranial"],
     "subtitle": "LAO Cranial",
-    "picture_path": "/images/lao-cranial.png"
+    "picture_path": "./images/lao-cranial.png"
   },
   "Diagonal branch": {
     "title": "Diagonal branch",
@@ -40,7 +40,7 @@
     "function": "supply blood flow to the anterior and anterolateral walls of the left ventricle. There are usually denoted as D1, D2, D3, etc. ",
     "best_views": ["RAO Cranial"],
     "subtitle": "RAO Cranial",
-    "picture_path": "/images/rao-cranial2.png"
+    "picture_path": "./images/rao-cranial2.png"
   },
   "RCA": {
     "title": "RCA : Right coronary arteries",
@@ -50,7 +50,7 @@
     ,"Atherosclerosis is a condition that involves thickening of the arterial walls via cholesterol and fat deposits that build up along the endoluminal surface of the arteries."],
     "best_views": ["Prox and mid: LAO (no cranial/caudal)", "Distal: LAO cranial"],
     "subtitle": "LAO",
-    "picture_path": "/images/lao.png"
+    "picture_path": "./images/lao.png"
   },
   "RMA": {
     "title": "RMA : Right marginal artery", 
@@ -59,7 +59,7 @@
     "function": "supplies the surrounding right atrial tissues and, in 10-15% of cases, provides the main arterial supply to the sinus node.",
     "best_views": ["LAO Cranial"],
     "subtitle": "LAO Cranial",
-    "picture_path": "/images/lao-cranial2.png"
+    "picture_path": "./images/lao-cranial2.png"
   },
   "PDA": {
     "title": "PDA : Posterior Descending Artery", 
@@ -67,7 +67,7 @@
     "function": "supplies the diaphragmatic portion of the left ventricle",
     "best_views": ["LAO Cranial"],
     "subtitle": "LAO Cranial",
-    "picture_path": "/images/lao-cranial3.png"
+    "picture_path": "./images/lao-cranial3.png"
   },
   "PL": {
     "title": "PL : Posterior left ventricular artery",
@@ -76,6 +76,6 @@
     "function": "terminal branch of the coronary arterial system supplying the inferior portion of the heart.",
     "best_views": ["LAO Cranial", "RAO Cranial"],
     "subtitle": "LAO Cranial",
-    "picture_path": "/images/lao-cranial4.png"
+    "picture_path": "./images/lao-cranial4.png"
   }
 }

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Col, Image, Row, Space, Typography } from "antd";
 import Content from "src/heartContents.json";
 import blank from "src/images/white-image.png";
+const images = require.context('../', true);
 const { Link } = Typography;
 
 const HeartContentComponent = ({ type, ...props }) => {
@@ -86,7 +87,7 @@ const HeartContentComponent = ({ type, ...props }) => {
               <Image
                 width={200}
                 height={200}
-                src={content?.picture_path ?? blank}
+                src={images(content?.picture_path).default ?? blank}
               />
             </Space>
           </Col>
