@@ -7,12 +7,19 @@ import { useGLTF } from '@react-three/drei'
 
 export default function Model(props) {
   const group = useRef()
-  const { nodes, materials } = useGLTF('/prod/heart.gltf')
+  const { nodes, materials } = useGLTF('/prod/heartAR.gltf')
   return (
     <group ref={group} {...props} dispose={null}>
       <mesh geometry={nodes.aorta_new.geometry} material={materials.red} position={[0.67, 0.06, 0.71]} />
+      <mesh
+        geometry={nodes.heart.geometry}
+        material={materials['Material.002']}
+        position={[-0.04, 0.01, 0]}
+        rotation={[Math.PI / 2, 0, 0]}
+        scale={[0.5, 0.5, 0.5]}
+      />
     </group>
   )
 }
 
-useGLTF.preload('/prod/heart.gltf')
+useGLTF.preload('/prod/heartAR.gltf')
