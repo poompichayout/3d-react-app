@@ -1713,10 +1713,10 @@
     utility-types "^3.10.0"
     zustand "^3.5.1"
 
-"@react-three/xr@^3.1.2":
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/@react-three/xr/-/xr-3.1.2.tgz#703d98f94f65e5aea7f650ec3f55552004e831bc"
-  integrity sha512-XfroFVziLo79YYlHMiLyFTHucbMG9XkVvruKVnvvAgNo7Dt0X2VndYTHI/xWqDP9U8fmuP+0fgqMfpvHXnMF2A==
+"@react-three/xr@^3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@react-three/xr/-/xr-3.2.0.tgz#a53a34605883785b0f04d77a716ae38d75dec1b9"
+  integrity sha512-AjemVDCoZGH7+dV4cU+ZmWQ+6Ullord2D2sQU+1sGEs0OWnvaoPB6UVfaOjY/fAxpriE7QVaFJCPrb7AdKViOw==
   dependencies:
     "@webxr-input-profiles/motion-controllers" "^1.0.0"
     react-merge-refs "^1.1.0"

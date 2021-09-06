@@ -1,36 +1,37 @@
-import React, { Suspense, useRef } from "react";
-import { ARCanvas, DefaultXRControllers, useHitTest } from "@react-three/xr";
-import { Loader } from "@react-three/drei";
+import React, { useState, useRef } from "react";
+import { DefaultXRControllers, ARCanvas, useHitTest } from "@react-three/xr";
+import { Text } from "@react-three/drei";
 
-function HitTestExample({ children }) {
+function HitTestExample() {
   const ref = useRef();
+  const [position, setPosition] = useState([]);
+
   useHitTest((hit) => {
     hit.decompose(
       ref.current.position,
       ref.current.rotation,
       ref.current.scale
     );
+    setPosition(ref.current.position);
+    console.log(ref.current.position);
   });
 
-  return <mesh ref={ref}>{children}</mesh>;
+  return (
+    <Text color="black" anchorX="center" anchorY="middle">
+      {position}
+    </Text>
+  );
 }
 
 const HeartARCanvas = ({ children }) => {
   return (
     <>
       <ARCanvas sessionInit={{ requiredFeatures: ["hit-test"] }}>
-        <ambientLight intensity={0.4} />
-        <pointLight position={[-10, -10, 5]} intensity={2} />
-        <pointLight position={[0, 0.5, -1]} distance={1} intensity={2} />
-        <directionalLight position={[10, 10, 5]} intensity={2} />
-        <directionalLight position={[-10, -10, -5]} intensity={1} />
-
-        <Suspense fallback={null}>
-          <HitTestExample>{children}</HitTestExample>
-        </Suspense>
+        <ambientLight />
+        <pointLight position={[10, 10, 10]} />
+        <HitTestExample />
         <DefaultXRControllers />
       </ARCanvas>
-      <Loader />
     </>
   );
 };

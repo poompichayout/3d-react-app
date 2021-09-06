@@ -16,7 +16,7 @@ const Vassel = () => {
       <RowStyled justify="center">
         <Col xs={24} md={15}>
           <HeartARCanvas>
-            <Model position={[0,0,0]} rotation={[0,0,0]} />
+            <Model position={[0,0,-5]} rotation={[0,0,0]} />
           </HeartARCanvas>
         </Col>
       </RowStyled>

@@ -19,4 +19,9 @@ module.exports = {
       },
     },
   ],
+  resolve: {
+    alias: {
+      react: 'preact'
+    }
+  }
 };
