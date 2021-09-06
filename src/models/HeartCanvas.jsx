@@ -6,7 +6,7 @@ const ZoomWithOrbital = () => {
   const { gl, camera } = useThree();
   return (
     <OrbitControls
-      enablePan={true}
+      enablePan={false}
       target={[0, 0, 0]}
       args={[camera, gl.domElement]}
       enableZoom={false}
