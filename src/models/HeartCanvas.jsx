@@ -10,6 +10,7 @@ const ZoomWithOrbital = () => {
       target={[0, 0, 0]}
       args={[camera, gl.domElement]}
       enableZoom={false}
+      maxAzimuthAngle={1}
     />
   );
 };

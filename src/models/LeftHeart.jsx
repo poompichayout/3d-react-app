@@ -6,9 +6,9 @@ import React, { useRef } from "react";
 import { useGLTF, Html } from "@react-three/drei";
 import styled from "styled-components";
 
-export default function RightHeart(props) {
+export default function LeftHeart(props) {
   const group = useRef();
-  const { nodes, materials } = useGLTF("/prod/heart.gltf");
+  const { nodes, materials } = useGLTF("/prod/leftheart.gltf");
   return (
     <group ref={group} {...props} dispose={null}>
       <mesh
@@ -16,12 +16,13 @@ export default function RightHeart(props) {
         material={materials.red}
         position={[0.67, 0.06, 0.71]}
       >
+        
         <Html position={[-0.4, 0.5, -0.35]} occlude zIndexRange={[900, 0]}>
           <Div1 content="LM" onClick={() => console.log("eieie")}>
             1
           </Div1>
         </Html>
-        <Html position={[0.3, 0, -0.71]} zIndexRange={[900, 0]}>
+        <Html position={[-0.4, -0.65, -1.1]} zIndexRange={[900, 0]}>
           <Div1 content="LCx">2</Div1>
         </Html>
         <Html zIndexRange={[900, 0]}>
@@ -39,27 +40,24 @@ export default function RightHeart(props) {
         <Html position={[-0.8, -1.1, -0.71]} zIndexRange={[900, 0]}>
           <Div1 content="PDA">7</Div1>
         </Html>
-        <Html position={[-0.8, -0.8, -0.9]} zIndexRange={[900, 0]}>
-          <Div1 content="PL">8</Div1>
-        </Html>
         <Html position={[0.5, -0.75, 0.1]} zIndexRange={[900, 0]}>
-          <Div1 content="Diagonal">9</Div1>
+          <Div1 content="Diagonal">8</Div1>
         </Html>
         <Html position={[0.6, -0.5, -0.1]} zIndexRange={[900, 0]}>
-          <Div1 content="Diagonal">9</Div1>
+          <Div1 content="Diagonal">8</Div1>
         </Html>
         <Html position={[0.4, -0.85, 0.3]} zIndexRange={[900, 0]}>
-          <Div1 content="Diagonal">9</Div1>
+          <Div1 content="Diagonal">8</Div1>
         </Html>
         <Html position={[0.3, -1.35, 0.3]} zIndexRange={[900, 0]}>
-          <Div1 content="Diagonal">9</Div1>
+          <Div1 content="Diagonal">8</Div1>
         </Html>
       </mesh>
     </group>
   );
 }
 
-useGLTF.preload("/prod/heart.gltf");
+useGLTF.preload("/prod/leftheart.gltf");
 
 const Div1 = styled.div`
   position: absolute;

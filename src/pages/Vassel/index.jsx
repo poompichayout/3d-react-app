@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { Button, Col, Row, Space, Table, Typography } from "antd";
+import { Tabs } from "antd";
 import HeartCanvas from "src/models/HeartCanvas";
-import Model from "src/models/Heart";
+import RightHeart from "src/models/Heart";
+import LeftHeart from "src/models/LeftHeart";
+import CoHeart from "src/models/CoHeart";
 import HeartContentModal from "src/components/HeartContentModal";
 import { Helmet } from "react-helmet";
 
 import styled from "styled-components";
+const { TabPane } = Tabs;
 
 const Vassel = () => {
   const [type, setType] = useState("LM");
@@ -27,12 +31,28 @@ const Vassel = () => {
       </Helmet>
       <RowStyled justify="center">
         <Col xs={24} md={15} style={{ minHeight: "60vh" }}>
-          <HeartCanvas>
-            <Model />
-          </HeartCanvas>
+          <Tabs defaultActiveKey="1" centered style={{ height: "100%" }}>
+            <TabPane tab="Right Dominant" key="1" style={{ height: "60vh" }}>
+              <HeartCanvas>
+                <RightHeart position={[0, 0.5, 0]} />
+              </HeartCanvas>
+            </TabPane>
+            <TabPane tab="Left Dominant" key="2" style={{ height: "60vh" }}>
+              <HeartCanvas>
+                <LeftHeart position={[0, 0.5, 0]} />
+              </HeartCanvas>
+            </TabPane>
+            <TabPane tab="Co Dominant" key="3" style={{ height: "60vh" }}>
+              <HeartCanvas>
+                <CoHeart position={[0, 0.5, 0]} />
+              </HeartCanvas>
+            </TabPane>
+          </Tabs>
         </Col>
         <Col xs={24} md={15}>
-          <Button onClick={() => window.location.href = "/app/coronary_ar"}>Start In AR</Button>
+          <Button onClick={() => (window.location.href = "/app/coronary_ar")}>
+            Start In AR
+          </Button>
         </Col>
       </RowStyled>
       <Row justify="center" style={{ backgroundColor: "#fafafa" }}>
@@ -109,7 +129,10 @@ const RowStyled = styled(Row)`
   background-color: #fafafa;
   text-align: center;
   min-height: 80vh;
-  padding: 4em;
+  padding-top: 4em;
+  padding-bottom: 4em;
+  padding-left: 1em;
+  padding-right: 1em;
 `;
 
 const leftDataSource = [
