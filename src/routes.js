@@ -5,7 +5,6 @@ import Vassel from "src/pages/Vassel";
 import HowToUse from "./pages/HowToUse";
 import AngiogramInfo from "./pages/AngiogramInfo";
 import VasselInfo from "./pages/VasselInfo";
-import VasselAR from "./pages/VasselAR";
 
 const routes = [
   {
@@ -15,7 +14,6 @@ const routes = [
       { path: "/", element: <Home /> },
       { path: "/app/angiogram", element: <Angiogram /> },
       { path: "/app/coronary_arteries", element: <Vassel /> },
-      { path: "/app/coronary_ar", element: <VasselAR /> },
       { path: "/how_to_use", element: <HowToUse /> },
       { path: "/app/angiogram/info/:id", element: <AngiogramInfo /> },
       { path: "/app/coronary_arteries/info/:id", element: <VasselInfo /> },

@@ -32,25 +32,25 @@ const Vassel = () => {
       <RowStyled justify="center">
         <Col xs={24} md={15} style={{ minHeight: "60vh" }}>
           <Tabs defaultActiveKey="1" centered style={{ height: "100%" }}>
-            <TabPane tab="Right Dominant" key="1" style={{ height: "60vh" }}>
+            <TabPane tab="Right Dominant" key="1" style={{ height: "80vh" }}>
               <HeartCanvas>
-                <RightHeart position={[0, 0.5, 0]} />
+                <RightHeart position={[0, 0.5, 0]} rotation={[0,-0.65,0]} />
               </HeartCanvas>
             </TabPane>
-            <TabPane tab="Left Dominant" key="2" style={{ height: "60vh" }}>
+            <TabPane tab="Left Dominant" key="2" style={{ height: "80vh" }}>
               <HeartCanvas>
-                <LeftHeart position={[0, 0.5, 0]} />
+                <LeftHeart position={[0, 0.5, 0]} rotation={[0,-0.65,0]} />
               </HeartCanvas>
             </TabPane>
-            <TabPane tab="Co Dominant" key="3" style={{ height: "60vh" }}>
+            <TabPane tab="Co Dominant" key="3" style={{ height: "80vh" }}>
               <HeartCanvas>
-                <CoHeart position={[0, 0.5, 0]} />
+                <CoHeart position={[0, 0.5, 0]} rotation={[0,-0.65,0]} />
               </HeartCanvas>
             </TabPane>
           </Tabs>
         </Col>
         <Col xs={24} md={15}>
-          <Button onClick={() => (window.location.href = "/app/coronary_ar")}>
+          <Button onClick={() => (window.location.href = "/arteries_AR.html")}>
             Start In AR
           </Button>
         </Col>
@@ -92,7 +92,7 @@ const Vassel = () => {
       <RowStyled justify="center">
         <Col xs={24} md={15}>
           <Typography.Title level={3} style={{ textAlign: "left" }}>
-            The left coronary artery
+            Left coronary artery
           </Typography.Title>
           <Table
             columns={columns}
@@ -103,7 +103,7 @@ const Vassel = () => {
         </Col>
         <Col xs={24} md={15} style={{ marginTop: "2em" }}>
           <Typography.Title level={3} style={{ textAlign: "left" }}>
-            The right coronary artery
+            Right coronary artery
           </Typography.Title>
           <Table
             columns={columns}

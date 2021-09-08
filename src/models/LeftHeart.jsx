@@ -16,11 +16,8 @@ export default function LeftHeart(props) {
         material={materials.red}
         position={[0.67, 0.06, 0.71]}
       >
-        
-        <Html position={[-0.4, 0.5, -0.35]} occlude zIndexRange={[900, 0]}>
-          <Div1 content="LM" onClick={() => console.log("eieie")}>
-            1
-          </Div1>
+        <Html position={[-0.4, 0.5, -0.35]} zIndexRange={[900, 0]}>
+          <Div1 content="LM">1</Div1>
         </Html>
         <Html position={[-0.4, -0.65, -1.1]} zIndexRange={[900, 0]}>
           <Div1 content="LCx">2</Div1>
@@ -61,18 +58,17 @@ useGLTF.preload("/prod/leftheart.gltf");
 
 const Div1 = styled.div`
   position: absolute;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   border: 2px solid #fff;
   border-radius: 50%;
-  font-size: 16px;
-  line-height: 30px;
   text-align: center;
   background: rgba(0, 0, 0, 0.8);
   color: #fff;
   transition: 0.5s;
   cursor: pointer;
   z-index: 0;
+  font-size: 10px;
 
   &: hover {
     color: #87ceeb;

@@ -58,18 +58,17 @@ useGLTF.preload("/prod/coheart.gltf");
 
 const Div1 = styled.div`
   position: absolute;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   border: 2px solid #fff;
   border-radius: 50%;
-  font-size: 16px;
-  line-height: 30px;
   text-align: center;
   background: rgba(0, 0, 0, 0.8);
   color: #fff;
   transition: 0.5s;
   cursor: pointer;
   z-index: 0;
+  font-size: 10px;
 
   &: hover {
     color: #87ceeb;
