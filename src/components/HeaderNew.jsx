@@ -14,7 +14,7 @@ const HeaderNew = () => {
         <Typography.Title>Cardiac Catheterization</Typography.Title>
       </Col>
       <Col xs={10} md={9} align="right" style={{margin: 0}}>
-        <Image
+        <HoverableImage
           preview={false}
           src={angiogram}
           width="80%"
@@ -31,7 +31,7 @@ const HeaderNew = () => {
         />
       </Col>
       <Col xs={10} md={10} align="left" style={{margin: 0}}>
-        <Image
+        <HoverableImage
           preview={false}
           src={vassel}
           width="75%"
@@ -56,6 +56,19 @@ const RowStyled = styled(Row)`
   background-color: #fff;
   padding-top: 4em;
   padding-bottom: 4em;
+`;
+
+const HoverableImage = styled(Image)`
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    filter: brightness(80%);
+  }
+
+  &:active {
+    filter: brightness(70%);
+  }
 `;
 
 const LandingButton = styled(Button).attrs({
