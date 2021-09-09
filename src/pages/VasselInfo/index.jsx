@@ -1,4 +1,4 @@
-import { Col, Row } from "antd";
+import { Button, Col, Row } from "antd";
 import React from "react";
 import { useParams } from "react-router";
 import styled from "styled-components";
@@ -11,6 +11,14 @@ const VasselInfo = () => {
     <RowStyled justify="center">
       <Col xs={24} md={20} style={{ minHeight: "50vh" }}>
         <HeartContentComponent type={params.id} />
+        <Button
+          type="primary"
+          size="large"
+          style={{ marginTop: "2em" }}
+          onClick={() => window.history.back()}
+        >
+          Back
+        </Button>
       </Col>
     </RowStyled>
   );

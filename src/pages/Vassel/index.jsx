@@ -6,6 +6,7 @@ import RightHeart from "src/models/Heart";
 import LeftHeart from "src/models/LeftHeart";
 import CoHeart from "src/models/CoHeart";
 import HeartContentModal from "src/components/HeartContentModal";
+import ARModal from "src/components/ARModal";
 import { Helmet } from "react-helmet";
 
 import styled from "styled-components";
@@ -14,6 +15,15 @@ const { TabPane } = Tabs;
 const Vassel = () => {
   const [type, setType] = useState("LM");
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [arModalVisible, setARModalVisible] = useState(false);
+
+  const showARModal = (e) => {
+    setARModalVisible(true);
+  };
+
+  const closeARModal = (e) => {
+    setARModalVisible(false);
+  };
 
   const showModal = (e) => {
     setType(e.target.innerText);
@@ -34,23 +44,23 @@ const Vassel = () => {
           <Tabs defaultActiveKey="1" centered style={{ height: "100%" }}>
             <TabPane tab="Right Dominant" key="1" style={{ height: "80vh" }}>
               <HeartCanvas>
-                <RightHeart position={[0, 0.5, 0]} rotation={[0,-0.65,0]} />
+                <RightHeart position={[0, 0.5, 0]} rotation={[0, -0.65, 0]} />
               </HeartCanvas>
             </TabPane>
             <TabPane tab="Left Dominant" key="2" style={{ height: "80vh" }}>
               <HeartCanvas>
-                <LeftHeart position={[0, 0.5, 0]} rotation={[0,-0.65,0]} />
+                <LeftHeart position={[0, 0.5, 0]} rotation={[0, -0.65, 0]} />
               </HeartCanvas>
             </TabPane>
             <TabPane tab="Co Dominant" key="3" style={{ height: "80vh" }}>
               <HeartCanvas>
-                <CoHeart position={[0, 0.5, 0]} rotation={[0,-0.65,0]} />
+                <CoHeart position={[0, 0.5, 0]} rotation={[0, -0.65, 0]} />
               </HeartCanvas>
             </TabPane>
           </Tabs>
         </Col>
         <Col xs={24} md={15}>
-          <Button onClick={() => (window.location.href = "/arteries_AR.html")}>
+          <Button onClick={showARModal}>
             Start In AR
           </Button>
         </Col>
@@ -117,8 +127,12 @@ const Vassel = () => {
         visible={isModalVisible}
         onOk={handleOk}
         onCancel={handleOk}
-        width={"100%"}
+        width={1280}
         type={type}
+      />
+      <ARModal
+        visible={arModalVisible}
+        onCancel={closeARModal}
       />
     </div>
   );

@@ -1,4 +1,4 @@
-import { Col, Row } from "antd";
+import { Button, Col, Row } from "antd";
 import React from "react";
 import { useParams } from "react-router";
 import styled from "styled-components";
@@ -11,6 +11,14 @@ const AngiogramInfo = () => {
     <RowStyled justify="center">
       <Col xs={22} lg={15} style={{ minHeight: "60vh" }}>
         <ContentComponent type={params.id} />
+        <Button
+          type="primary"
+          size="large"
+          style={{ marginTop: "2em" }}
+          onClick={() => window.history.back()}
+        >
+          Back
+        </Button>
       </Col>
     </RowStyled>
   );

@@ -11,6 +11,7 @@ import {
 } from "antd";
 import Content from "src/contents.json";
 import blank from "src/images/white-image.png";
+const images = require.context("../", true);
 const { Panel } = Collapse;
 
 const ContentComponent = ({ type }) => {
@@ -19,6 +20,7 @@ const ContentComponent = ({ type }) => {
   useEffect(() => {
     setContent(Content[type]);
   }, [type]);
+
   return (
     <>
       <Row justify="center" align="top" style={{ marginTop: "2em" }}>
@@ -78,11 +80,40 @@ const ContentComponent = ({ type }) => {
             {content.contents.map((value, index) => {
               return (
                 <Panel header={value.title} key={index}>
-                  <Row justify="center" style={{ marginBottom: "2em"}}>
+                  <Row justify="center" style={{ marginBottom: "2em" }}>
                     <Col xs={20} align="middle">
-                      <Space wrap align="center">
-                        <Image src={blank} width={200} style={{ border: "2px solid"}} />
-                        <Image src={blank} width={200} style={{ border: "2px solid"}} />
+                      <Space wrap align="start">
+                        <Image
+                          src={blank}
+                          width={200}
+                          style={{ border: "2px solid" }}
+                        />
+                        {value?.pic_mid ? (
+                          <Space direction="vertical">
+                            <Image
+                              src={
+                                images(
+                                  value?.pic_mid || "./images/white-image.png"
+                                ).default ?? blank
+                              }
+                              width={200}
+                              style={{ border: "2px solid" }}
+                            />
+                            <p>RAO30</p>
+                          </Space>
+                        ) : null}
+                        <Space direction="vertical">
+                          <Image
+                            src={
+                              images(
+                                value?.pic_right || "./images/white-image.png"
+                              ).default ?? blank
+                            }
+                            width={200}
+                            style={{ border: "2px solid" }}
+                          />
+                          {value?.pic_mid ? <p>RAO45</p> : null}
+                        </Space>
                       </Space>
                     </Col>
                   </Row>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Col, Image, Row, Space, Typography } from "antd";
+import { Col, Image, Row, Typography } from "antd";
 import Content from "src/heartContents.json";
 import blank from "src/images/white-image.png";
 const images = require.context('../', true);
@@ -77,19 +77,23 @@ const HeartContentComponent = ({ type, ...props }) => {
       <Col xs={20} xl={10} style={{ height: "100%" }}>
         <Row align="middle" justify="center">
           <Col xs={24} align="middle">
-            <Space>
+            <Row justify="center" style={{ marginTop: "2em"}}>
+              <Col xs={24} md={12}>
               <Image
                 width={200}
                 height={200}
                 src={blank}
                 style={{ border: "2px solid" }}
               />
+              </Col>
+              <Col xs={24} md={12}>
               <Image
                 width={200}
                 height={200}
                 src={images(content?.picture_path).default ?? blank}
               />
-            </Space>
+              </Col>
+            </Row>
           </Col>
           <Col xs={24} align="middle">
             <Typography.Title level={4} style={{ marginTop: "1em" }}>

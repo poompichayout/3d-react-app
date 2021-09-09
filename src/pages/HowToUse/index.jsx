@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import Flag from "react-world-flags";
 import styled from "styled-components";
-import { Col, Row, Space, Switch, Typography } from "antd";
+import { Col, Image, Row, Space, Switch, Typography } from "antd";
 import Abbreviation from "./Abbreviation";
+import marker from "src/images/pattern-AR_marker.png";
+import sample from "src/images/ar-sample.gif";
 
 function HowToUse() {
   const [lang, setLang] = useState(true);
@@ -99,6 +101,18 @@ function HowToUse() {
                     organizer
                   </li>
                 </ol>
+                <Typography.Text>AR Mode</Typography.Text>
+                <ol>
+                  <li>
+                    <p>Download this picture on your another device</p>
+                    <Image src={marker} width="25%"></Image>
+                  </li>
+
+                  <li>
+                    <p>Open AR Mode and put a marker in front of the camera for model detection</p>
+                    <Image src={sample} width="25%"></Image>
+                  </li>
+                </ol>
               </div>
             ) : (
               <div className="th">
@@ -161,11 +175,23 @@ function HowToUse() {
                   </li>
                   <li>กด About Us เพื่อดูข้อมูลการติดต่อของคณะผู้จัดทำ</li>
                 </ol>
+                <Typography.Text>โหมดความจริงเสมือน (Augmented Reality)</Typography.Text>
+                <ol>
+                  <li>
+                    <p>ดาวน์โหลดภาพนี้ในอุปกรณ์อีกเครื่องนึงของท่าน</p>
+                    <Image src={marker} width="25%"></Image>
+                  </li>
+
+                  <li>
+                    <p>เปิดใช้งานโหมด AR และนำไฟล์ภาพด้านบนวางไว้หน้ากล้อง เพื่อทำการตรวจจับโมเดลอัตโนมัติ</p>
+                    <Image src={sample} width="25%"></Image>
+                  </li>
+                </ol>
               </div>
             )}
           </Row>
         </Col>
-        <Col xs={24} md={18} style={{ marginTop: "4em"}}>
+        <Col xs={24} md={18} style={{ marginTop: "4em" }}>
           <Abbreviation />
         </Col>
       </RowStyled>
