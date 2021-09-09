@@ -32,42 +32,54 @@ const NavBar = () => {
             title="3D Model Viewer"
           >
             <Menu.ItemGroup title="Module">
-              <SubMenu
-                key="angiogram"
-                title="Angiogram"
-                onTitleClick={() => (window.location.href = "/app/angiogram")}
-              >
-                {angiogramMenu.map((value, index) => (
+              <SubMenu key="angiogram" title="Angiogram">
+                <Menu.ItemGroup title="Model">
                   <Menu.Item
-                    key={`angiogram:${index}`}
-                    onClick={() =>
-                      (window.location.href = `/app/angiogram/info/${value
-                        .split(" ")
-                        .map((x) => x.toLowerCase())
-                        .join("-")}`)
-                    }
+                    key="title1"
+                    onClick={() => (window.location.href = "/app/angiogram")}
                   >
-                    {value}
+                    Angiogram
                   </Menu.Item>
-                ))}
+                </Menu.ItemGroup>
+                <Menu.ItemGroup title="Information">
+                  {angiogramMenu.map((value, index) => (
+                    <Menu.Item
+                      key={`angiogram:${index}`}
+                      onClick={() =>
+                        (window.location.href = `/app/angiogram/info/${value
+                          .split(" ")
+                          .map((x) => x.toLowerCase())
+                          .join("-")}`)
+                      }
+                    >
+                      {value}
+                    </Menu.Item>
+                  ))}
+                </Menu.ItemGroup>
               </SubMenu>
-              <SubMenu
-                key="arteries"
-                title="Coronary arteries"
-                onTitleClick={() =>
-                  (window.location.href = "/app/coronary_arteries")
-                }
-              >
-                {arteriesMenu.map((value, index) => (
+              <SubMenu key="arteries" title="Coronary arteries">
+                <Menu.ItemGroup title="Model">
                   <Menu.Item
-                    key={`arteries:${index}`}
+                    key="title2"
                     onClick={() =>
-                      (window.location.href = `/app/coronary_arteries/info/${value}`)
+                      (window.location.href = "/app/coronary_arteries")
                     }
                   >
-                    {value}
+                    Coronary arteries
                   </Menu.Item>
-                ))}
+                </Menu.ItemGroup>
+                <Menu.ItemGroup title="Information">
+                  {arteriesMenu.map((value, index) => (
+                    <Menu.Item
+                      key={`arteries:${index}`}
+                      onClick={() =>
+                        (window.location.href = `/app/coronary_arteries/info/${value}`)
+                      }
+                    >
+                      {value}
+                    </Menu.Item>
+                  ))}
+                </Menu.ItemGroup>
               </SubMenu>
             </Menu.ItemGroup>
           </SubMenu>
