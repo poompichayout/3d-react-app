@@ -15,7 +15,7 @@ const AngiogramInfo = () => {
           type="primary"
           size="large"
           style={{ marginTop: "2em" }}
-          onClick={() => window.history.back()}
+          onClick={() => window.location.href = "/app/angiogram"}
         >
           Back
         </Button>

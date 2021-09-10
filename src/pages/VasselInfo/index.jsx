@@ -15,7 +15,7 @@ const VasselInfo = () => {
           type="primary"
           size="large"
           style={{ marginTop: "2em" }}
-          onClick={() => window.history.back()}
+          onClick={() => window.location.href = "/app/coronary_arteries"}
         >
           Back
         </Button>
