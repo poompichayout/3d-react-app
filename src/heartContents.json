@@ -26,6 +26,22 @@
     "subtitle": "LAO Caudal",
     "picture_path": "./images/lao-caudal.png"
   },
+  "Septal": {
+    "title": "Septal branch",
+    "location": "These are right-sided branches (on axial CTCA) from the left anterior descending artery.",
+    "function": "They provide the main blood supply to the anterior interventricular septum. A smaller posterior section is also supplied from the posterior descending artery instead (see coronary arterial dominance).",
+    "best_views": ["LAO Cranial"],
+    "subtitle": "LAO Cranial",
+    "picture_path": "./images/lao-cranial.png"
+  },
+  "Diagonal": {
+    "title": "Diagonal branch",
+    "location": "There are termed \"diagonal\" due to them branching from their parent vessel at acute angles. They extend over the left ventricle in a diagonal fashion toward the acute margin and the cardiac apex. They often run parallel to one another and are variable in number (often 2 to 9).",
+    "function": "supply blood flow to the anterior and anterolateral walls of the left ventricle. There are usually denoted as D1, D2, D3, etc. ",
+    "best_views": ["RAO Cranial"],
+    "subtitle": "RAO Cranial",
+    "picture_path": "./images/rao-cranial2.png"
+  },
   "Septal branch": {
     "title": "Septal branch",
     "location": "These are right-sided branches (on axial CTCA) from the left anterior descending artery.",

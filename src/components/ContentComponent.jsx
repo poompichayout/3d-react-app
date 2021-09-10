@@ -42,8 +42,8 @@ const ContentComponent = ({ type }) => {
                     </Typography.Title>
                     <ul>
                       {contentText[type.split("-")[0].toLowerCase()].map(
-                        (value) => (
-                          <li>{value}</li>
+                        (value, index) => (
+                          <li key={index}>{value}</li>
                         )
                       )}
                     </ul>
@@ -52,8 +52,8 @@ const ContentComponent = ({ type }) => {
                     </Typography.Title>
                     <ul>
                       {contentText[type.split("-")[1].toLowerCase()].map(
-                        (value) => (
-                          <li>{value}</li>
+                        (value, index) => (
+                          <li key={index}>{value}</li>
                         )
                       )}
                     </ul>
@@ -80,15 +80,21 @@ const ContentComponent = ({ type }) => {
             {content.contents.map((value, index) => {
               return (
                 <Panel header={value.title} key={index}>
-                  <Row justify="center" style={{ marginBottom: "2em" }}>
+                  <Row justify="center" style={{ marginBottom: value?.pic_left? "2em": "0" }}>
                     <Col xs={20} align="middle">
-                      <Space wrap align="start">
-                        <Image
-                          src={blank}
-                          width={200}
-                          style={{ border: "2px solid" }}
-                        />
-                        {value?.pic_mid ? (
+                      {value?.pic_mid ? (
+                        <>
+                          <Image
+                            src={
+                              images(
+                                value?.pic_left || "./images/white-image.png"
+                              ).default ?? blank
+                            }
+                            width={200}
+                            style={{ border: "2px solid" }}
+                          />
+                          <br />
+                          <Space wrap align="start">
                           <Space direction="vertical">
                             <Image
                               src={
@@ -101,20 +107,65 @@ const ContentComponent = ({ type }) => {
                             />
                             <p>RAO30</p>
                           </Space>
-                        ) : null}
-                        <Space direction="vertical">
-                          <Image
-                            src={
-                              images(
-                                value?.pic_right || "./images/white-image.png"
-                              ).default ?? blank
-                            }
-                            width={200}
-                            style={{ border: "2px solid" }}
-                          />
-                          {value?.pic_mid ? <p>RAO45</p> : null}
+                          <Space direction="vertical">
+                            <Image
+                              src={
+                                images(
+                                  value?.pic_right || "./images/white-image.png"
+                                ).default ?? blank
+                              }
+                              width={200}
+                              style={{ border: "2px solid" }}
+                            />
+                            {value?.pic_mid ? <p>RAO45</p> : null}
+                          </Space>
                         </Space>
-                      </Space>
+                        </>
+                      ) : (
+                        <Space wrap align="start">
+                          {value?.pic_left ? (
+                            <Image
+                              src={
+                                images(
+                                  value?.pic_left || "./images/white-image.png"
+                                ).default ?? blank
+                              }
+                              width={200}
+                              style={{ border: "2px solid" }}
+                            />
+                          ) : null}
+
+                          {value?.pic_mid ? (
+                            <Space direction="vertical">
+                              <Image
+                                src={
+                                  images(
+                                    value?.pic_mid || "./images/white-image.png"
+                                  ).default ?? blank
+                                }
+                                width={200}
+                                style={{ border: "2px solid" }}
+                              />
+                              <p>RAO30</p>
+                            </Space>
+                          ) : null}
+                          {value?.pic_right ? (
+                            <Space direction="vertical">
+                              <Image
+                                src={
+                                  images(
+                                    value?.pic_right ||
+                                      "./images/white-image.png"
+                                  ).default ?? blank
+                                }
+                                width={200}
+                                style={{ border: "2px solid" }}
+                              />
+                              {value?.pic_mid ? <p>RAO45</p> : null}
+                            </Space>
+                          ) : null}
+                        </Space>
+                      )}
                     </Col>
                   </Row>
                   {value.content.map((s, idx) => (

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Col, Row, Space, Table, Typography } from "antd";
+import { Button, Col, Row, Table, Typography } from "antd";
 import { Tabs } from "antd";
 import HeartCanvas from "src/models/HeartCanvas";
 import RightHeart from "src/models/Heart";
@@ -26,7 +26,7 @@ const Vassel = () => {
   };
 
   const showModal = (e) => {
-    setType(e.target.innerText);
+    setType(e.target.attributes.content.value);
     setIsModalVisible(true);
   };
 
@@ -44,7 +44,7 @@ const Vassel = () => {
           <Tabs defaultActiveKey="1" centered style={{ height: "100%" }}>
             <TabPane tab="Right Dominant" key="1" style={{ height: "80vh" }}>
               <HeartCanvas>
-                <RightHeart position={[0, 0.5, 0]} rotation={[0, -0.65, 0]} />
+                <RightHeart position={[0, 0.5, 0]} rotation={[0, -0.65, 0]} handleClick={showModal} />
               </HeartCanvas>
             </TabPane>
             <TabPane tab="Left Dominant" key="2" style={{ height: "80vh" }}>
@@ -65,39 +65,6 @@ const Vassel = () => {
           </Button>
         </Col>
       </RowStyled>
-      <Row justify="center" style={{ backgroundColor: "#fafafa" }}>
-        <Col xs={20} align="middle">
-          <Space size={[8, 16]} wrap>
-            <Button type="primary" onClick={showModal}>
-              LM
-            </Button>
-            <Button type="primary" onClick={showModal}>
-              LAD
-            </Button>
-            <Button type="primary" onClick={showModal}>
-              LCx
-            </Button>
-            <Button type="primary" onClick={showModal}>
-              Septal branch
-            </Button>
-            <Button type="primary" onClick={showModal}>
-              Diagonal branch
-            </Button>
-            <Button type="primary" onClick={showModal}>
-              RCA
-            </Button>
-            <Button type="primary" onClick={showModal}>
-              RMA
-            </Button>
-            <Button type="primary" onClick={showModal}>
-              PDA
-            </Button>
-            <Button type="primary" onClick={showModal}>
-              PL
-            </Button>
-          </Space>
-        </Col>
-      </Row>
 
       <RowStyled justify="center">
         <Col xs={24} md={15}>
