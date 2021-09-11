@@ -14,7 +14,9 @@
         "title": "Right Coronary artery",
         "content": [
           "In general, RCA is not be seen clearly in RAO Cranial view."
-        ]
+        ],
+        "pic_left": "./images/RCA/RAO cranial.jpeg",
+        "pic_right": "./images/NEW RCA RAO Cr.gif"
       },
       {
         "title": "Example",

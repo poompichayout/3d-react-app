@@ -4,9 +4,14 @@
     "location": "The left main coronary artery emerges from the aorta through the ostia of the left aortic cusp, within the sinus of Valsalva.It travels from the aorta, and passes between the pulmonary trunk and the left atrial appendage. Under the appendage, the artery divides (and is thus a very short vessel) into the anterior interventricular (left anterior descending artery) and the left circumflex artery",
     "function": "supply the majority of oxygenated blood to ventricular myocardium, and additionally to the left atrium, left atrial appendage, pulmonary artery, and aortic root.",
     "defects": ["Atherosclerosis is a condition that involves thickening of the arterial walls via cholesterol and fat deposits that build up along the endoluminal surface of the arteries. With severe disease, these plaques may become calcified, increase in size, and eventually cause significant stenosis"],
-    "best_views": ["AP", "LAO cranial", "LAO caudal"],
+    "best_views": ["AP Caudal", "AP Cranial", "LAO Cranial", "LAO Caudal"],
     "subtitle": "AP",
-    "picture_path": "./images/ap.png"
+    "picture_path": [
+      "./images/CoronaryArteries/Left main/AP caudal.png",
+      "./images/CoronaryArteries/Left main/AP cranial.png",
+      "./images/CoronaryArteries/Left main/LAO cranial.png",
+      "./images/CoronaryArteries/Left main/LAO caudal.png"
+    ]
   },
   "LAD": {
     "title": "LAD: Left Anterior Descending", 
@@ -16,7 +21,9 @@
     "defects": ["The LAD artery is the most commonly occluded of the coronary arteries. It provides the major blood supply to the interventricular septum, and thus bundle branches of the conducting system. Hence, blockage of this artery due to coronary artery disease can lead to impairment or death (infarction) of the conducting system. The result is a \"block\" of impulse conduction between the atria and the ventricles known as \"right/left bundle branch block.\""],
     "best_views": ["RAO Cranial"],
     "subtitle": "RAO Cranial",
-    "picture_path": "./images/rao-cranial.png"
+    "picture_path": [
+      "./images/CoronaryArteries/LAD/RAO cranial.png"
+    ]
   },
   "LCx": {
     "title": "LCx : Left circumflex arteries",
@@ -24,7 +31,9 @@
     "function": "supplies most of the left atrium: the posterior and lateral free walls of the left ventricle, and part of the anterior papillary muscle. In 40-50% of hearts the circumflex artery supplies the artery to the SA node",
     "best_views": ["LAO Caudal"],
     "subtitle": "LAO Caudal",
-    "picture_path": "./images/lao-caudal.png"
+    "picture_path": [
+      "./images/CoronaryArteries/LCx/LAO caudal.png"
+    ]
   },
   "Septal": {
     "title": "Septal branch",
@@ -32,7 +41,9 @@
     "function": "They provide the main blood supply to the anterior interventricular septum. A smaller posterior section is also supplied from the posterior descending artery instead (see coronary arterial dominance).",
     "best_views": ["LAO Cranial"],
     "subtitle": "LAO Cranial",
-    "picture_path": "./images/lao-cranial.png"
+    "picture_path": [
+      "./images/CoronaryArteries/Septal/LAO cranial.png"
+    ]
   },
   "Diagonal": {
     "title": "Diagonal branch",
@@ -40,7 +51,9 @@
     "function": "supply blood flow to the anterior and anterolateral walls of the left ventricle. There are usually denoted as D1, D2, D3, etc. ",
     "best_views": ["RAO Cranial"],
     "subtitle": "RAO Cranial",
-    "picture_path": "./images/rao-cranial2.png"
+    "picture_path": [
+      "./images/CoronaryArteries/Diagonal/RAO cranial.png"
+    ]
   },
   "Septal branch": {
     "title": "Septal branch",
@@ -48,7 +61,9 @@
     "function": "They provide the main blood supply to the anterior interventricular septum. A smaller posterior section is also supplied from the posterior descending artery instead (see coronary arterial dominance).",
     "best_views": ["LAO Cranial"],
     "subtitle": "LAO Cranial",
-    "picture_path": "./images/lao-cranial.png"
+    "picture_path": [
+      "./images/CoronaryArteries/Septal/LAO cranial.png"
+    ]
   },
   "Diagonal branch": {
     "title": "Diagonal branch",
@@ -56,7 +71,9 @@
     "function": "supply blood flow to the anterior and anterolateral walls of the left ventricle. There are usually denoted as D1, D2, D3, etc. ",
     "best_views": ["RAO Cranial"],
     "subtitle": "RAO Cranial",
-    "picture_path": "./images/rao-cranial2.png"
+    "picture_path": [
+      "./images/CoronaryArteries/Diagonal/RAO cranial.png"
+    ]
   },
   "RCA": {
     "title": "RCA : Right coronary arteries",
@@ -64,9 +81,11 @@
     "function": "supply blood to the myocardium (heart tissue) itself; that is, coronary capillaries deliver oxygenated blood (nutrients) to all of the heart's cells. Numerous clinically relevant arterial branches arise from the right coronary artery, including those that supply the conduction system.",
     "defects": ["Right coronary artery branches supply the sinus and atrioventricular nodes; hence, blockage in these vessels can lead to conduction abnormalities"
     ,"Atherosclerosis is a condition that involves thickening of the arterial walls via cholesterol and fat deposits that build up along the endoluminal surface of the arteries."],
-    "best_views": ["Prox and mid: LAO (no cranial/caudal)", "Distal: LAO cranial"],
+    "best_views": ["Prox and mid: LAO (no cranial/caudal)", "LAO Cranial"],
     "subtitle": "LAO",
-    "picture_path": "./images/lao.png"
+    "picture_path": [
+      "./images/CoronaryArteries/RCA/LAO cranial.png"
+    ]
   },
   "RMA": {
     "title": "RMA : Right marginal artery", 
@@ -75,7 +94,9 @@
     "function": "supplies the surrounding right atrial tissues and, in 10-15% of cases, provides the main arterial supply to the sinus node.",
     "best_views": ["LAO Cranial"],
     "subtitle": "LAO Cranial",
-    "picture_path": "./images/lao-cranial2.png"
+    "picture_path": [
+      "./images/CoronaryArteries/RMA/LAO cranial.png"
+    ]
   },
   "PDA": {
     "title": "PDA : Posterior Descending Artery", 
@@ -83,7 +104,9 @@
     "function": "supplies the diaphragmatic portion of the left ventricle",
     "best_views": ["LAO Cranial"],
     "subtitle": "LAO Cranial",
-    "picture_path": "./images/lao-cranial3.png"
+    "picture_path": [
+      "./images/CoronaryArteries/PDA/LAO cranial.png"
+    ]
   },
   "PL": {
     "title": "PL : Posterior left ventricular artery",
@@ -92,6 +115,9 @@
     "function": "terminal branch of the coronary arterial system supplying the inferior portion of the heart.",
     "best_views": ["LAO Cranial", "RAO Cranial"],
     "subtitle": "LAO Cranial",
-    "picture_path": "./images/lao-cranial4.png"
+    "picture_path": [
+      "./images/CoronaryArteries/PL/LAO cranial.png",
+      "./images/CoronaryArteries/PL/RAO cranial.png"
+    ]
   }
 }

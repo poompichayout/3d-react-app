@@ -49,12 +49,12 @@ const Vassel = () => {
             </TabPane>
             <TabPane tab="Left Dominant" key="2" style={{ height: "80vh" }}>
               <HeartCanvas>
-                <LeftHeart position={[0, 0.5, 0]} rotation={[0, -0.65, 0]} />
+                <LeftHeart position={[0, 0.5, 0]} rotation={[0, -0.65, 0]} handleClick={showModal} />
               </HeartCanvas>
             </TabPane>
             <TabPane tab="Co Dominant" key="3" style={{ height: "80vh" }}>
               <HeartCanvas>
-                <CoHeart position={[0, 0.5, 0]} rotation={[0, -0.65, 0]} />
+                <CoHeart position={[0, 0.5, 0]} rotation={[0, -0.65, 0]} handleClick={showModal} />
               </HeartCanvas>
             </TabPane>
           </Tabs>
