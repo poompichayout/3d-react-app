@@ -9,7 +9,7 @@ import {
   Space,
   Typography,
 } from "antd";
-import Content from "src/contents.json";
+import Content from "src/contents/contents.json";
 import blank from "src/images/white-image.png";
 const images = require.context("../", true);
 const { Panel } = Collapse;
@@ -80,7 +80,13 @@ const ContentComponent = ({ type }) => {
             {content.contents.map((value, index) => {
               return (
                 <Panel header={value.title} key={index}>
-                  <Row justify="center" style={{ marginBottom: value?.pic_left? "2em": "0" }}>
+                  <Row
+                    justify="center"
+                    style={{ marginBottom: value?.pic_left ? "2em" : "0" }}
+                  >
+                    {/**
+                     * อันนี้รูป
+                     */}
                     <Col xs={20} align="middle">
                       {value?.pic_mid ? (
                         <>
@@ -95,31 +101,32 @@ const ContentComponent = ({ type }) => {
                           />
                           <br />
                           <Space wrap align="start">
-                          <Space direction="vertical">
-                            <Image
-                              src={
-                                images(
-                                  value?.pic_mid || "./images/white-image.png"
-                                ).default ?? blank
-                              }
-                              width={200}
-                              style={{ border: "2px solid" }}
-                            />
-                            <p>RAO30</p>
+                            <Space direction="vertical">
+                              <Image
+                                src={
+                                  images(
+                                    value?.pic_mid || "./images/white-image.png"
+                                  ).default ?? blank
+                                }
+                                width={200}
+                                style={{ border: "2px solid" }}
+                              />
+                              <p>RAO30</p>
+                            </Space>
+                            <Space direction="vertical">
+                              <Image
+                                src={
+                                  images(
+                                    value?.pic_right ||
+                                      "./images/white-image.png"
+                                  ).default ?? blank
+                                }
+                                width={200}
+                                style={{ border: "2px solid" }}
+                              />
+                              {value?.pic_mid ? <p>RAO45</p> : null}
+                            </Space>
                           </Space>
-                          <Space direction="vertical">
-                            <Image
-                              src={
-                                images(
-                                  value?.pic_right || "./images/white-image.png"
-                                ).default ?? blank
-                              }
-                              width={200}
-                              style={{ border: "2px solid" }}
-                            />
-                            {value?.pic_mid ? <p>RAO45</p> : null}
-                          </Space>
-                        </Space>
                         </>
                       ) : (
                         <Space wrap align="start">
@@ -167,9 +174,12 @@ const ContentComponent = ({ type }) => {
                         </Space>
                       )}
                     </Col>
+                    {/**
+                     * อันนี้จบรูป
+                     */}
                   </Row>
                   {value.content.map((s, idx) => (
-                    <p key={idx}>{s}</p>
+                    <p key={idx} style={{ textAlign: "justify", textIndent: "2em", marginBottom: 0 }}>{s}</p>
                   ))}
                 </Panel>
               );

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Col, Image, Row, Typography } from "antd";
-import Content from "src/heartContents.json";
+import Content from "src/contents/heartContents.json";
 import blank from "src/images/white-image.png";
 const images = require.context("../", true);
 const { Link } = Typography;
@@ -24,12 +24,12 @@ const HeartContentComponent = ({ type, ...props }) => {
         <ul>
           <li key={5}>
             <Typography.Text>
-              <b>Location:</b> {content?.location}
+              <b>Location:</b> {content?.location.map((value, index) => (<Typography.Paragraph style={{ marginBottom: "0", textAlign: "justify" }}>{value}</Typography.Paragraph>))}
             </Typography.Text>
           </li>
           <li key={6}>
             <Typography.Text>
-              <b>Function:</b> {content?.function}
+              <b>Function:</b> <Typography.Paragraph style={{ marginBottom: "0", textAlign: "justify" }}>{content?.function}</Typography.Paragraph>
             </Typography.Text>
           </li>
           {content.defects ? (
@@ -37,7 +37,7 @@ const HeartContentComponent = ({ type, ...props }) => {
               <Typography.Text>
                 <b>Importance in cardiovascular defects:</b>
                 {content.defects?.map((value, index) => (
-                  <Typography.Paragraph key={index}>
+                  <Typography.Paragraph key={index} style={{ textIndent: "1em", marginBottom: "0", textAlign: "justify" }}>
                     {value}
                   </Typography.Paragraph>
                 ))}

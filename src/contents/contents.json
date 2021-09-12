@@ -1,11 +1,12 @@
 {
   "rao-cranial": {
-    "header": ["The LAD", "Diagonal branches", "Mid RCA and PDA"],
+    "header": ["LAD", "Diagonal branches", "Mid RCA and PDA"],
     "contents": [
       {
         "title": "Left Coronary artery",
         "content": [
-          "The RAO-cranial view is used to see the origins of the diagonals along the mid and distal LAD artery. Diagonal branch bifurcations are well visualized. The diagonal branches are projected upward. The proximal LAD and CFX usually are overlapped. Marginal branches may overlap, and the CFX artery is foreshortened, but posterolateral branches are well visualized."
+          "RAO cranial view is used to see the origins of diagonal branches along the mid and distal LAD. Diagonal branch bifurcations are well visualized.",
+          "Diagonal branches are projected upward. The proximal LAD and LCx usually are overlapped. Marginal branches may overlap, and LCx is foreshortened, but posterolateral branches are well visualized."
         ],
         "pic_left": "./images/LCA/RAO cranial.JPEG",
         "pic_right": "./images/LCA RAO Cr.gif"
@@ -31,15 +32,15 @@
   },
   "rao-caudal": {
     "header": [
-      "Distal Left Main Stem (LMS).",
-      "Proximal segment of the LAD.",
-      "Left circumflex artery (LCx) and its branches."
+      "Distal Left Main Stem (LMS)",
+      "Proximal segment of the LAD",
+      "Left circumflex artery (LCx) and its branches"
     ],
     "contents": [
       {
         "title": "Left Coronary artery",
         "content": [
-          "RAO-caudal view shows the LMCA bifurcation, perpendicular to that of the LAO-cranial angle. The origin and course of the Left Circumflex or obtuse marginal branches and proximal LAD segment are seen clearly. This view is one of the two best for visualization of the Left Circumflex artery. The LAD artery beyond the proximal segment is obscured by overlapped diagonals. However, the apical segment of the LAD artery is displayed clearly."
+          "RAO caudal view shows the LMCA bifurcation, perpendicular to that of the LAO cranial angle. The origin and course of LCx or obtuse marginal branches and proximal LAD segment are seen clearly. This view is one of the two best for visualization of LCx. LAD beyond the proximal segment is obscured by overlapped diagonals. However, the apical segment of the LAD artery is displayed clearly."
         ],
         "pic_left": "./images/LCA/RAO caudal.JPEG",
         "pic_right": "./images/LCA RAO Cau.gif"
@@ -63,7 +64,7 @@
   },
   "lao-cranial": {
     "header": [
-      "Ostium of the LMS",
+      "Ostium of the LM",
       "Origin of the diagonals from the LAD",
       "Ostium and proximal RCA"
     ],
@@ -71,7 +72,9 @@
       {
         "title": "Left Coronary artery",
         "content": [
-          "The LAO-cranial view also shows the LMCA (slightly foreshortened), LAD, and its diagonal branches. Septal (coursing to the left) and diagonal branches (to the right) are separated clearly. The CFX artery and marginal branches are foreshortened and overlapped, although the posterolateral and posterior descending branches of left-dominant circulation are displayed clearly. Deep inspiration, which moves the density of the diaphragm down and out of the field, is helpful. The LAO angle (>30 degrees) should be set so that the LAD artery course is parallel to the spine and stays in the “lucent wedge” bordered by the spine on the medial edge and the curve of the diaphragm. Cranial angulation tilts the LMCA down and permits a view of the LAD/CFX bifurcation. LAO-cranial angulation that is too steep or inspiration that is too shallow produces considerable overlapping with the diaphragm and liver, degrading the image."
+          "\tLAO cranial view shows LM (slightly foreshortened), LAD, and its diagonal branches. Septal (coursing to the left) and diagonal branches (to the right) are separated clearly. LCx and marginal branches are foreshortened and overlapped, although the posterolateral and posterior descending branches of left-dominant circulation are displayed clearly.",
+          "\tDeep inspiration, which moves the density of the diaphragm down and out of the field, is helpful. LAO angle (>30 degrees) should be set so that the LAD artery course is parallel to the spine and stays in the “lucent wedge” bordered by the spine on the medial edge and the curve of the diaphragm. Cranial angulation tilts the LM down and permits a view of LAD-LCx bifurcation.",
+          "\tLAO cranial angulation that is too steep or inspiration that is too shallow produces considerable overlapping with the diaphragm and liver, degrading the image."
         ],
         "pic_left": "./images/LCA/LAO cranial.JPEG",
         "pic_right": "./images/LCA LAO Cr.gif"
@@ -79,7 +82,7 @@
       {
         "title": "Right Coronary artery",
         "content": [
-          "The LAO-cranial view shows the origin of the RCA, the entire length of the mid RCA, and the posterior descending artery (PDA) bifurcation (crux). Cranial angulation tilts the PDA down to see vessel contour and to reduce foreshortening. Deep inspiration is necessary to clear the diaphragm. The PDA and posterolateral branches are slightly foreshortened in this view."
+          "LAO cranial view shows the origin of the RCA, the entire length of the mid RCA, and the bifurcation of posterior descending artery (the crux of PDA). Cranial angulation tilts the PDA down to see vessel contour and to reduce foreshortening. Deep inspiration is necessary to clear the diaphragm. The PDA and posterolateral branches are slightly foreshortened in this view."
         ],
         "pic_left": "./images/RCA/LAO cranial.jpeg",
         "pic_right": "./images/RCA LAO Cr.gif"
@@ -87,8 +90,7 @@
       {
         "title": "Example",
         "content": [
-          "LAO 55/60° Cranial 20°",
-          "The cranial angulation of 20° combined with the LAO projection at 55°/60° is especially useful to study the left main coronary artery."
+          "The cranial angulation of 20° combined with the LAO projection at 55°/60° is especially useful to study the left main coronary artery (LM)."
         ],
         "pic_left": "./images/LCA/LAO cranial example.JPEG",
         "pic_right": "./images/LCA LAO 55 Cr20.gif"
@@ -101,7 +103,8 @@
       {
         "title": "Left Coronary artery",
         "content": [
-          "The LAO-caudal view (“spider” view) shows the LMCA (foreshortened) and bifurcation of the LMCA into the CFX and LAD artery. Proximal and mid portions of the CFX artery are usually seen clearly with the origins of obtuse marginal branches. Poor image quality may be caused by overlapping of the diaphragm and spine. Good separation of the vessel is more difficult in vertically displaced hearts, such as in patients with chronic obstructive pulmonary disease, and more angulation is required to obtain an unobstructed view. The LAD artery is considerably foreshortened in this view. "
+          "LAO caudal view (“spider” view) shows LM (foreshortened) and bifurcation of LM into LCx and LAD. Proximal and mid portions of LCx are usually seen clearly with the origins of obtuse marginal branches.",
+          "Poor image quality may be caused by overlapping of the diaphragm and spine. LAD is considerably foreshortened in this view. "
         ],
         "pic_left": "./images/LCA/LAO caudal.JPEG",
         "pic_right": "./images/LCA LAO Cau.gif"
@@ -109,7 +112,7 @@
       {
         "title": "Right Coronary artery",
         "content": [
-          "This projection allows the whole study of the R.C.A. and, especially, clearly defines the region of the crux of the heart."
+          "LAO projection with caudal angulation allows the whole study of RCA and, especially, clearly defines the region of the crux of the heart."
         ],
         "pic_left": "./images/RCA/LAO caudal.JPEG",
         "pic_right": "./images/RCA LAO Cau.gif"
@@ -117,7 +120,6 @@
       {
         "title": "Example",
         "content": [
-          "LAO 45° Caudal 15°",
           "Left anterior oblique projection at 45° combined with a caudal angulation of 15° has a clearly spider apperance."
         ],
         "pic_left": "./images/LCA/LAO caudal example .JPEG",
@@ -136,7 +138,7 @@
       {
         "title": "Left Coronary artery",
         "content": [
-          "It is the most useful working projection for angioplasty because treatment can continue in this view without breathholding, which is often required for the left cranial view in heavy patients and with suboptimal equipment. The segments which are foreshortened in the AP cranial view include the distal LAD and the proximal left circumflex artery"
+          "AP Cranial view is the most useful working projection for angioplasty because treatment can continue in this view without breathholding, which is often required in heavy patients and with suboptimal equipment. The segments which are foreshortened in the AP cranial view include the distal LAD and the proximal left circumflex artery."
         ],
         "pic_left": "./images/LCA/AP cranial.JPEG",
         "pic_right": "./images/LCA AP Cr.gif"
@@ -144,7 +146,7 @@
       {
         "title": "Right Coronary artery",
         "content": [
-          "The AP cranial view shows the origin of the RCA. The mid segment is foreshortened. This is the best view, however, to display the posterior descending and posterolateral branches of a dominant RCA system and the size of a collateralized LAD artery. For example, AP 0° Cranial 30°."
+          "AP cranial view shows the origin of RCA. The mid segment is foreshortened. This is the best view, to display the posterior descending (PDA) and posterolateral (PL) branches of a dominant RCA system and the size of a collateralized LAD artery such as AP 0° Cranial 30°."
         ],
         "pic_left": "./images/RCA/AP cranial.JPEG",
         "pic_right": "./images/RCA AP Cr.gif"
@@ -157,7 +159,8 @@
       {
         "title": "Left Coronary artery",
         "content": [
-          "The AP 0° caudal 30° view displays the left main coronary artery (LMCA) in its entire perpendicular length. In this view, the proximal segments of the LAD and LCX arteries are displayed, but the branches are overlapped. After the left main segment, slight RAO or LAO angulation may be necessary to clear the density of the vertebrae and the catheter shaft in the thoracic descending aorta from covering the artery. For"
+          "AP 0° caudal 30° view displays the left main coronary artery (LM) in its entire perpendicular length.",
+          "In this view, the proximal segments of LAD and LCx are displayed, but the branches are overlapped. After the left main segment, slight RAO or LAO angulation may be need to manage the density of the vertebrae and the catheter shaft in the thoracic descending aorta from covering the artery."
         ],
         "pic_left": "./images/LCA/AP caudal.JPEG",
         "pic_right": "./images/LCA AP Cau.gif"

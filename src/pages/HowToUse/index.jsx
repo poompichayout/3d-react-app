@@ -2,10 +2,19 @@ import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import Flag from "react-world-flags";
 import styled from "styled-components";
-import { Col, Image, Row, Space, Switch, Typography } from "antd";
+import { Col, Row, Space, Switch, Typography } from "antd";
 import Abbreviation from "./Abbreviation";
-import marker from "src/images/pattern-AR_marker.png";
-import sample from "src/images/ar-sample.gif";
+import HowToUseEN from "./HowToUseEN";
+import HowToUseTH from "./HowToUseTH";
+import YouTube from "react-youtube";
+
+const opts = {
+  height: '390',
+  width: '640',
+  playerVars: {
+    autoplay: 1,
+  },
+};
 
 function HowToUse() {
   const [lang, setLang] = useState(true);
@@ -33,163 +42,11 @@ function HowToUse() {
                 <Flag code="GB" height="16" />
               </Space>
             </Col>
+            <Col xs={22} align="middle" style={{ marginBottom: "2em", marginTop: "2em" }}>
+              <YouTube videoId="6-UoGDOQfDM" opts={opts} />
+            </Col>
           </Row>
-          <Row>
-            {lang ? (
-              <div>
-                <Typography.Text>Home page</Typography.Text>
-                <ol>
-                  <li>
-                    Click ‘Angiogram’ to explore fluoroscopy and fluoroscopic
-                    image
-                    <ol>
-                      <li>
-                        Select step by step to see desired image
-                        <ol>
-                          <li>
-                            Select angiographic view
-                            <ul>
-                              <li>AP</li>
-                              <li>LAO</li>
-                              <li>RAO</li>
-                            </ul>
-                          </li>
-                          <li>
-                            Select Angulation
-                            <ul>
-                              <li>Cranial</li>
-                              <li>Caudal</li>
-                            </ul>
-                          </li>
-                          <li>
-                            Select Degree Angle
-                            <ul>
-                              <li>
-                                For angiographic view; from 0 to 90 degree
-                              </li>
-                              <li>For angulation; from 0 to 25 degree</li>
-                            </ul>
-                          </li>
-                        </ol>
-                      </li>
-                      <li>
-                        Click ‘submit’ to see fluoroscopic image. Fluoroscopic
-                        image and information will show on the screen
-                      </li>
-                    </ol>
-                  </li>
-                  <li>
-                    Click ‘Coronary arteries’ to explore cardiac vessel anatomy
-                    Model of cardiac vessel will demonstrate with the vessel's
-                    name tag.
-                    <ol>
-                      <li>Click the interested name tag ; such as LCx.</li>
-                      <li>
-                        The fluoroscopy image and necessary information of the
-                        selected-vessel will show on the screen.
-                      </li>
-                      <li>Click ‘back’ to explore other vessel</li>
-                    </ol>
-                  </li>
-                  <li>
-                    Click ‘3D Model Viewer’ bar at the left upper corner for a
-                    shortcut keys to go on other page without back to the home
-                    page
-                  </li>
-                  <li>
-                    Click ‘About us’ to see more information and contact of the
-                    organizer
-                  </li>
-                </ol>
-                <Typography.Text>AR Mode</Typography.Text>
-                <ol>
-                  <li>
-                    <p>Download this picture on your another device</p>
-                    <Image src={marker} width="25%"></Image>
-                  </li>
-
-                  <li>
-                    <p>Open AR Mode and put a marker in front of the camera for model detection</p>
-                    <Image src={sample} width="25%"></Image>
-                  </li>
-                </ol>
-              </div>
-            ) : (
-              <div className="th">
-                <Typography.Text> หน้า Home</Typography.Text>
-                <ol>
-                  <li>
-                    กดปุ่ม Angiogram
-                    สำหรับดูเครื่องปฏิบัติการสวนหัวใจและหลอดเลือด
-                    และภาพฟลูออโรสโคปิค
-                    <ol>
-                      <li>
-                        เลือกข้อมูลของภาพฟลูออโรสโคปิคที่ต้องการดู
-                        <ol>
-                          <li>
-                            เลือก Angiographic View
-                            <ul>
-                              <li>AP</li>
-                              <li>LAO</li>
-                              <li>RAO</li>
-                            </ul>
-                          </li>
-                          <li>
-                            เลือก Angulation
-                            <ul>
-                              <li>Cranial</li>
-                              <li>Caudal</li>
-                            </ul>
-                          </li>
-                          <li>
-                            เลือก Degree Angle
-                            <ul>
-                              <li>
-                                มุม Angiographic View ตั้งแต่ 0 ถึง 90 องศา
-                              </li>
-                              <li>มุม Angulation ตั้งแต่ 0 ถึง 25 องศา</li>
-                            </ul>
-                          </li>
-                        </ol>
-                      </li>
-                      <li>
-                        กด Submit เพื่อดูภาพฟลูออโรสโคปิคที่เลือก
-                        และภาพฟลูออโรสโคปิคที่เลือกจะปรากฎพร้อมกับข้อมูล
-                      </li>
-                    </ol>
-                  </li>
-                  <li>
-                    กดปุ่ม Coronary Arteries สำหรับดูกายวิภาคของหลอดเลือดหัวใจ
-                    โดยแบบจำลองกายวิภาคของหลอดเลือดหัวใจปรากฎจะพร้อมกับชื่อของหลอดเลือกแต่ละเส้น
-                    <ol>
-                      <li>กดปุ่มชื่อของหลอดเลือดหัวใจที่สนใจ เช่น LCx</li>
-                      <li>
-                        ภาพฟลูออโรสโคปิค และข้อมูลต่าง ๆ
-                        ที่สำคัญของหลอดเลือดหัวใจที่เลือกจะปรากฎ
-                      </li>
-                      <li>กดปุ่ม Back เพื่อกลับไปเลือกหลอดเลือดหัวใจอื่น ๆ</li>
-                    </ol>
-                  </li>
-                  <li>
-                    กด 3D Model Viewer ด้านซ้ายบนเพื่อเป็นคีย์ลัดไปยังหน้าอื่น
-                  </li>
-                  <li>กด About Us เพื่อดูข้อมูลการติดต่อของคณะผู้จัดทำ</li>
-                </ol>
-                <Typography.Text>โหมดความจริงเสมือน (Augmented Reality)</Typography.Text>
-                <ol>
-                  <li>
-                    <p>ดาวน์โหลดภาพนี้ในอุปกรณ์อีกเครื่องนึงของท่าน</p>
-                    <Image src={marker} width="25%"></Image>
-                  </li>
-
-                  <li>
-                    <p>เปิดใช้งานโหมด AR และนำไฟล์ภาพด้านบนวางไว้หน้ากล้อง เพื่อทำการตรวจจับโมเดลอัตโนมัติ</p>
-                    <Image src={sample} width="25%"></Image>
-                  </li>
-                </ol>
-              </div>
-            )}
-          </Row>
+          <Row>{lang ? <HowToUseEN /> : <HowToUseTH />}</Row>
         </Col>
         <Col xs={24} md={18} style={{ marginTop: "4em" }}>
           <Abbreviation />
@@ -202,7 +59,8 @@ function HowToUse() {
 const RowStyled = styled(Row)`
   background: #fff;
   background-color: #fff;
-  padding: 4em;
+  padding-top: 4em;
+  padding-bottom: 4em;
 `;
 
 export default HowToUse;

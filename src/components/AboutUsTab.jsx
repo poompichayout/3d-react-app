@@ -5,6 +5,7 @@ import { MailOutlined } from "@ant-design/icons";
 
 import styled from "styled-components";
 import mixed from "../images/mixed.png";
+import hospital from "../images/BHlogo.png";
 
 const AboutUsTab = () => {
   return (
@@ -99,10 +100,12 @@ const AboutUsTab = () => {
       </RowStyled>
       <RowStyled
         justify="center"
+        align="top"
         style={{ minHeight: "30vh", padding: "0 0 2em 0" }}
       >
         <Col xs={24}>
           <Image width={300} src={mixed} preview={false} />
+          <Image src={hospital} height={110} preview={false}/>
         </Col>
       </RowStyled>
     </div>

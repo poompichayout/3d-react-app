@@ -1,0 +1,44 @@
+{
+    "Home page": [
+        {
+            "title": "Click ‘Angiogram’ to explore fluoroscopy and fluoroscopic image.",
+            "length": 2,
+            "subtitle": [
+                "Select step by step to see desired image", 
+                "Click ‘submit’ to see fluoroscopic image. Fluoroscopic image and information will show on the screen."
+            ]
+        },
+        {
+            "title": "Click ‘Coronary arteries’ to explore cardiac vessel anatomy. Model of cardiac vessel will demonstrate with the vessel's name tag.",
+            "length": 4,
+            "subtitle": [
+                "Click the interested name tag ; such as LCx.", 
+                "The fluoroscopy image and necessary information of the selected-vessel will show on the screen.",
+                "Click ‘back’ to explore other vessel.",
+                "There are three model following each dominant that is Right, Left, and Co dominant. Click on the interested dominant at menu bar aboce the model."
+            ]
+        },
+        {
+            "title": "Click ‘3D Model Viewer’ bar at the left upper corner for a shortcut keys to go on other page without back to the home page.",
+            "length": 0,
+            "subtitle": []
+        },
+        {
+            "title": "Click ‘About us’ to see more information and contact of the organizer.",
+            "length": 0,
+            "subtitle": []
+        }
+    ],
+    "AR Mode": [
+        {
+            "title": "Download this picture on your another device.",
+            "length": 0,
+            "subtitle": []
+        },
+        {
+            "title": "Open AR Mode and put a marker in front of the camera for model detection.",
+            "length": 0,
+            "subtitle": []
+        }
+    ]
+}
