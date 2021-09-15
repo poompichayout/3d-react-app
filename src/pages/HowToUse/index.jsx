@@ -9,10 +9,9 @@ import HowToUseTH from "./HowToUseTH";
 import YouTube from "react-youtube";
 
 const opts = {
-  height: '390',
-  width: '640',
+  width: "100%",
   playerVars: {
-    autoplay: 1,
+    autoplay: 0,
   },
 };
 
@@ -28,27 +27,40 @@ function HowToUse() {
         <title>How To Use - Cardiac Catheterization</title>
       </Helmet>
       <RowStyled justify="center" align="top">
-        <Col xs={24} md={18}>
+        <Col xs={22} md={18}>
           <Row>
-            <Col xs={24} sm={18}>
-              <Typography.Title>
+            <Col xs={24} md={21}>
+              <Typography.Title style={{ float: "left" }}>
                 {lang ? "How To Use" : <div className="th">วิธีการใช้</div>}
               </Typography.Title>
             </Col>
-            <Col xs={24} sm={2} style={{ marginBottom: "2em" }}>
+            <Col xs={24} md={2} style={{ marginBottom: "2em" }}>
               <Space>
                 <Flag code="TH" height="16" />
                 <Switch defaultChecked onChange={onLanguageChange} />
                 <Flag code="GB" height="16" />
               </Space>
             </Col>
-            <Col xs={22} align="middle" style={{ marginBottom: "2em", marginTop: "2em" }}>
-              <YouTube videoId="6-UoGDOQfDM" opts={opts} />
+          </Row>
+          <Row justify="center">
+            <Col
+              xs={24}
+              sm={24}
+              md={24}
+              lg={22}
+              xl={20}
+              align="middle"
+              style={{
+                marginBottom: "2em",
+                marginTop: "2em",
+              }}
+            >
+              <YouTube videoId="eplGvr1x760" opts={opts} />
             </Col>
           </Row>
           <Row>{lang ? <HowToUseEN /> : <HowToUseTH />}</Row>
         </Col>
-        <Col xs={24} md={18} style={{ marginTop: "4em" }}>
+        <Col xs={22} md={18} style={{ marginTop: "4em" }}>
           <Abbreviation />
         </Col>
       </RowStyled>

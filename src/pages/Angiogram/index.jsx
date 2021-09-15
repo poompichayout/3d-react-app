@@ -6,6 +6,7 @@ import ContentModal from "src/components/ContentModal";
 import { Helmet } from "react-helmet";
 
 import styled from "styled-components";
+const { Title } = Typography;
 
 const Angiogram = () => {
   const [turnOption, setTurnOption] = useState("AP");
@@ -28,11 +29,11 @@ const Angiogram = () => {
 
   const onChange = (e) => {
     setTurnOption(e.target.value);
-  }
+  };
 
   const onCaudalChange = (e) => {
     setX(e.target.value);
-  }
+  };
 
   return (
     <div>
@@ -40,10 +41,10 @@ const Angiogram = () => {
         <title>Angiogram - Cardiac Catheterization</title>
       </Helmet>
       <RowStyled justify="center">
-        <Col xs={22} md={15} style={{ minHeight: "60vh" }}>
+        <Col xs={24} lg={15} style={{ minHeight: "60vh" }}>
           <CathLabCanvas>
             <Model
-              position={[0, -4.25, -1.5]}
+              position={[-2, -4.25, -1.5]}
               option={turnOption}
               zdegree={zDegree}
               xOption={x}
@@ -51,12 +52,14 @@ const Angiogram = () => {
             />
           </CathLabCanvas>
         </Col>
-        <Col xs={20} md={8}>
-          <Row justify="center" align="middle" style={{ padding: "4em 0 4em 0"}}>
+        <Col xs={20} md={15} lg={8}>
+          <Row
+            justify="center"
+            align="middle"
+            style={{ padding: "4em 0 4em 0" }}
+          >
             <Col xs={24}>
-              <Typography.Title level={3}>
-                Select Angiographic Views
-              </Typography.Title>
+              <StyledTitle>Select Angiographic Views</StyledTitle>
               <Radio.Group
                 onChange={onChange}
                 defaultValue="AP"
@@ -75,7 +78,7 @@ const Angiogram = () => {
               </Radio.Group>
             </Col>
             <Col xs={24} style={{ marginTop: "2em" }}>
-              <Typography.Title level={3}>Select an Angulation</Typography.Title>
+              <StyledTitle>Select an Angulation</StyledTitle>
               <Radio.Group
                 onChange={onCaudalChange}
                 defaultValue="CRANIAL"
@@ -88,9 +91,13 @@ const Angiogram = () => {
                 </Space>
               </Radio.Group>
             </Col>
-            <Col xs={24} style={{ marginTop: "2em" }}>
+            <Col xs={23} style={{ marginTop: "2em" }}>
               <Typography.Title level={3}>Select degree angle</Typography.Title>
-              <Typography.Title level={3}>{turnOption}</Typography.Title>
+              <Typography.Title level={3}>
+                {turnOption === "AP"
+                  ? turnOption
+                  : turnOption + " " + zDegree + "°"}
+              </Typography.Title>
               <Slider
                 disabled={turnOption === "AP"}
                 min={1}
@@ -99,7 +106,9 @@ const Angiogram = () => {
                 value={zDegree}
                 onChange={(value) => setZDegree(value)}
               />
-              <Typography.Title level={3}>{x}</Typography.Title>
+              <Typography.Title level={3}>
+                {x + " " + xDegree + "°"}
+              </Typography.Title>
               <Slider
                 min={1}
                 max={x === "CRANIAL" ? 25 : 60}
@@ -118,7 +127,7 @@ const Angiogram = () => {
             </Col>
           </Row>
         </Col>
-        <Col md={3} />
+        <Col lg={3} />
       </RowStyled>
       <ContentModal
         visible={isModalVisible}
@@ -135,12 +144,28 @@ const RowStyled = styled(Row)`
   background: #fff;
   background-color: #fafafa;
   text-align: center;
-  min-height: 80vh;
 `;
 
 const SubmitButton = styled(Button)`
   margin-top: 2em;
   float: right;
+`;
+
+const StyledTitle = styled(Title)`
+  @media only screen and (max-width: 576px) {
+    &.ant-typography {
+      font-size: 20px;
+    }
+  }
+
+  @media only screen and (min-width: 576px) and (max-width: 890px) {
+    &.ant-typography {
+      font-size: 22px;
+    }
+  }
+  &.ant-typography {
+    font-size: 25px;
+  }
 `;
 
 export default Angiogram;

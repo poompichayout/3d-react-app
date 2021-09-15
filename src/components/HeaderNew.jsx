@@ -6,23 +6,24 @@ import styled from "styled-components";
 import angiogram from "src/images/bedwhuman.png";
 import heart from "src/images/heart.png";
 import vassel from "src/images/vassel.png";
+const { Title } = Typography;
 
 const HeaderNew = () => {
   return (
     <RowStyled justify="center" align="middle">
       <Col xs={20} align="middle">
-        <Typography.Title>Cardiac Catheterization</Typography.Title>
+        <StyledTitle>Cardiac Catheterization</StyledTitle>
       </Col>
-      <Col xs={10} md={9} align="right" style={{margin: 0}}>
+      <Col xs={10} md={9} align="right" style={{ margin: 0 }}>
         <HoverableImage
           preview={false}
           src={angiogram}
           width="80%"
-          onClick={() => window.location.href = "/app/angiogram"}
+          onClick={() => (window.location.href = "/app/angiogram")}
           style={{ cursor: "pointer" }}
         />
       </Col>
-      <Col xs={3} md={3} align="middle" style={{margin: 0}}>
+      <Col xs={3} md={3} align="middle" style={{ margin: 0 }}>
         <Image
           preview={false}
           src={heart}
@@ -30,12 +31,12 @@ const HeaderNew = () => {
           style={{ marginTop: "15%" }}
         />
       </Col>
-      <Col xs={10} md={10} align="left" style={{margin: 0}}>
+      <Col xs={10} md={10} align="left" style={{ margin: 0 }}>
         <HoverableImage
           preview={false}
           src={vassel}
           width="75%"
-          onClick={() => window.location.href = "/app/coronary_arteries"}
+          onClick={() => (window.location.href = "/app/coronary_arteries")}
           style={{ cursor: "pointer" }}
         />
       </Col>
@@ -58,16 +59,30 @@ const RowStyled = styled(Row)`
   padding-bottom: 4em;
 `;
 
+const StyledTitle = styled(Title)`
+  @media only screen and (max-width: 576px) {
+    &.ant-typography {
+      font-size: 25px;
+    }
+  }
+
+  @media only screen and (min-width: 576px) and (max-width: 890px) {
+    &.ant-typography {
+      font-size: 30px;
+    }
+  }
+`;
+
 const HoverableImage = styled(Image)`
   cursor: pointer;
   transition: 0.3s;
 
   &:hover {
-    filter: brightness(80%);
+    filter: brightness(110%);
   }
 
   &:active {
-    filter: brightness(70%);
+    filter: brightness(90%);
   }
 `;
 
