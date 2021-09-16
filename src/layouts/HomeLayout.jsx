@@ -1,6 +1,5 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import AboutUsTab from "src/components/AboutUsTab";
 import NavBar from "src/components/NavBar";
 
 const HomeLayout = () => {
@@ -8,7 +7,6 @@ const HomeLayout = () => {
     <div>
       <NavBar />
       <Outlet />
-      <AboutUsTab />
     </div>
   );
 };

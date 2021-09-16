@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Col, Row, Table, Typography } from "antd";
 import { Tabs } from "antd";
 import HeartCanvas from "src/models/HeartCanvas";
@@ -10,12 +10,18 @@ import ARModal from "src/components/ARModal";
 import { Helmet } from "react-helmet";
 
 import styled from "styled-components";
+import { useLocation } from "react-router";
 const { TabPane } = Tabs;
 
 const Vassel = () => {
   const [type, setType] = useState("LM");
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [arModalVisible, setARModalVisible] = useState(false);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   const showARModal = (e) => {
     setARModalVisible(true);

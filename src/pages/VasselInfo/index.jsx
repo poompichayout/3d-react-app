@@ -1,11 +1,17 @@
 import { Button, Col, Row } from "antd";
-import React from "react";
-import { useParams } from "react-router";
+import React, { useEffect } from "react";
+import { useLocation, useNavigate, useParams } from "react-router";
 import styled from "styled-components";
 import HeartContentComponent from "src/components/HeartContentComponent";
 
 const VasselInfo = () => {
   const params = useParams();
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
     <RowStyled justify="center">
@@ -14,7 +20,7 @@ const VasselInfo = () => {
         <Button
           type="primary"
           style={{ marginTop: "2em", marginLeft: "1em" }}
-          onClick={() => (window.location.href = "/app/coronary_arteries")}
+          onClick={() => navigate("/app/coronary_arteries")}
         >
           Back To Coronary Arteries Model
         </Button>
@@ -28,6 +34,7 @@ const RowStyled = styled(Row)`
   background-color: #fafafa;
   padding-top: 2em;
   padding-bottom: 2em;
+  min-height: 100vh;
 `;
 
 export default VasselInfo;

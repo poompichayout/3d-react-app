@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import Flag from "react-world-flags";
 import styled from "styled-components";
@@ -7,6 +7,7 @@ import Abbreviation from "./Abbreviation";
 import HowToUseEN from "./HowToUseEN";
 import HowToUseTH from "./HowToUseTH";
 import YouTube from "react-youtube";
+import { useLocation } from "react-router";
 
 const opts = {
   width: "100%",
@@ -17,6 +18,11 @@ const opts = {
 
 function HowToUse() {
   const [lang, setLang] = useState(true);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   const onLanguageChange = () => {
     setLang(!lang);

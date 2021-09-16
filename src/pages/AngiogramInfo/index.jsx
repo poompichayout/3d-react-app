@@ -1,11 +1,18 @@
 import { Button, Col, Row } from "antd";
-import React from "react";
-import { useParams } from "react-router";
+import React, { useEffect } from "react";
+import { useLocation, useParams } from "react-router";
 import styled from "styled-components";
 import ContentComponent from "../../components/ContentComponent";
+import { useNavigate } from "react-router-dom";
 
 const AngiogramInfo = () => {
   const params = useParams();
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
     <RowStyled justify="center">
@@ -14,7 +21,7 @@ const AngiogramInfo = () => {
         <Button
           type="primary"
           style={{ marginTop: "2em" }}
-          onClick={() => (window.location.href = "/app/angiogram")}
+          onClick={() => navigate("/app/angiogram")}
         >
           Back To Angiogram Model
         </Button>
@@ -26,7 +33,7 @@ const AngiogramInfo = () => {
 const RowStyled = styled(Row)`
   background: #fff;
   background-color: #fafafa;
-  min-height: 80vh;
+  min-height: 100vh;
   padding-bottom: 2em;
 `;
 

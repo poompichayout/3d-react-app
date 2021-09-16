@@ -1,19 +1,32 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Radio, Row, Space, Typography, Slider, Button } from "antd";
-import CathLabCanvas from "src/models/CathLabCanvas";
-import Model from "src/models/Bedwhuman";
-import ContentModal from "src/components/ContentModal";
 import { Helmet } from "react-helmet";
+import { useSelector, useDispatch } from "react-redux";
 
 import styled from "styled-components";
 import HeartAR from "src/models/HeartAR";
+import CathLabCanvas from "src/models/CathLabCanvas";
+import Model from "src/models/Bedwhuman";
+import ContentModal from "src/components/ContentModal";
+import { SET_ANGIOGRAM_STATE, SET_DEGREE_STATE } from "src/redux/types";
+import { useLocation } from "react-router";
 const { Title } = Typography;
 
 const Angiogram = () => {
-  const [turnOption, setTurnOption] = useState("AP");
-  const [x, setX] = useState("CRANIAL");
-  const [zDegree, setZDegree] = useState(30);
-  const [xDegree, setXDegree] = useState(0);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  // Redux
+  const dispatch = useDispatch();
+  const globalState = useSelector((state) => state.data.angiogram_state);
+
+  // normal state
+  const [turnOption, setTurnOption] = useState(globalState.angiographic);
+  const [x, setX] = useState(globalState.angulation);
+  const [zDegree, setZDegree] = useState(globalState.degree.z);
+  const [xDegree, setXDegree] = useState(globalState.degree.x);
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const showModal = () => {
@@ -29,10 +42,20 @@ const Angiogram = () => {
   };
 
   const onChange = (e) => {
+    dispatch({
+      type: SET_ANGIOGRAM_STATE,
+      payload: e.target.value,
+      name: "angiographic",
+    });
     setTurnOption(e.target.value);
   };
 
   const onCaudalChange = (e) => {
+    dispatch({
+      type: SET_ANGIOGRAM_STATE,
+      payload: e.target.value,
+      name: "angulation",
+    });
     setX(e.target.value);
   };
 
@@ -41,7 +64,7 @@ const Angiogram = () => {
       <Helmet>
         <title>Angiogram - Cardiac Catheterization</title>
       </Helmet>
-      <RowStyled justify="center">
+      <RowStyled justify="center" style={{ minHeight: "100vh" }}>
         <Col xs={24} xl={15} style={{ minHeight: "60vh" }}>
           <CathLabCanvas>
             <Model
@@ -112,7 +135,14 @@ const Angiogram = () => {
                 max={90}
                 defaultValue={zDegree}
                 value={zDegree}
-                onChange={(value) => setZDegree(value)}
+                onChange={(value) => {
+                  setZDegree(value);
+                  dispatch({
+                    type: SET_DEGREE_STATE,
+                    payload: value,
+                    name: "z",
+                  });
+                }}
               />
               <Typography.Title level={3}>
                 {x + " " + xDegree + "°"}
@@ -122,7 +152,14 @@ const Angiogram = () => {
                 max={x === "CRANIAL" ? 25 : 60}
                 defaultValue={xDegree}
                 value={xDegree}
-                onChange={(value) => setXDegree(value)}
+                onChange={(value) => {
+                  setXDegree(value);
+                  dispatch({
+                    type: SET_DEGREE_STATE,
+                    payload: value,
+                    name: "x",
+                  });
+                }}
               />
               <SubmitButton
                 shape="round"
