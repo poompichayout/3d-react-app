@@ -3,6 +3,10 @@ import { Image, Typography } from "antd";
 import marker from "src/images/pattern-AR_marker.png";
 import sample from "src/images/ar-sample.gif";
 
+const paddingLeft = {
+  paddingLeft: "1.5em",
+};
+
 const HowToUseTH = () => {
   return (
     <div className="th" style={{ textAlign: "justify" }}>
@@ -13,13 +17,13 @@ const HowToUseTH = () => {
         <li>
           กดปุ่ม Angiogram สำหรับดูเครื่องปฏิบัติการสวนหัวใจและหลอดเลือด
           และภาพฟลูออโรสโคปิค
-          <ol style={{ paddingLeft: "2em" }}>
+          <ol style={{ ...paddingLeft }}>
             <li>
               เลือกข้อมูลของภาพฟลูออโรสโคปิคที่ต้องการดู
-              <ol style={{ paddingLeft: "2em" }}>
+              <ol style={{ ...paddingLeft }}>
                 <li>
                   เลือก Angiographic View
-                  <ul style={{ paddingLeft: "2em", listStyleType: "circle" }}>
+                  <ul style={{ ...paddingLeft, listStyleType: "circle" }}>
                     <li>AP</li>
                     <li>LAO</li>
                     <li>RAO</li>
@@ -27,14 +31,14 @@ const HowToUseTH = () => {
                 </li>
                 <li>
                   เลือก Angulation
-                  <ul style={{ paddingLeft: "2em", listStyleType: "circle" }}>
+                  <ul style={{ ...paddingLeft, listStyleType: "circle" }}>
                     <li>Cranial</li>
                     <li>Caudal</li>
                   </ul>
                 </li>
                 <li>
                   เลือก Degree Angle
-                  <ul style={{ paddingLeft: "2em", listStyleType: "circle" }}>
+                  <ul style={{ ...paddingLeft, listStyleType: "circle" }}>
                     <li>มุม Angiographic View ตั้งแต่ 0 ถึง 90 องศา</li>
                     <li>มุม Angulation ตั้งแต่ 0 ถึง 25 องศา</li>
                   </ul>
@@ -50,7 +54,7 @@ const HowToUseTH = () => {
         <li>
           กดปุ่ม Coronary Arteries สำหรับดูกายวิภาคของหลอดเลือดหัวใจ
           โดยแบบจำลองกายวิภาคของหลอดเลือดหัวใจปรากฎจะพร้อมกับชื่อของหลอดเลือกแต่ละเส้น
-          <ol style={{ paddingLeft: "2em" }}>
+          <ol style={{ ...paddingLeft }}>
             <li>กดปุ่มชื่อของหลอดเลือดหัวใจที่สนใจ เช่น LCx</li>
             <li>
               ภาพฟลูออโรสโคปิค และข้อมูลต่าง ๆ
@@ -59,7 +63,7 @@ const HowToUseTH = () => {
             <li>กดปุ่ม Back เพื่อกลับไปเลือกหลอดเลือดหัวใจอื่น ๆ</li>
             <li>
               มีแบบจำลองกายวิภาคของหลอดเลือดหัวใจใน 3 รูปแบบ
-              <ul style={{ paddingLeft: "2em", listStyleType: "circle" }}>
+              <ul style={{ ...paddingLeft, listStyleType: "circle" }}>
                 <li>Right Dominant</li>
                 <li>Left dominant</li>
                 <li>Co dominant</li>
@@ -74,7 +78,7 @@ const HowToUseTH = () => {
       <Typography.Text>
         <b>โหมดความจริงเสมือน (Augmented Reality)</b>
       </Typography.Text>
-      <ol style={{ paddingLeft: "2em" }}>
+      <ol style={{ ...paddingLeft }}>
         <li>
           <p>ดาวน์โหลดภาพนี้ในอุปกรณ์อีกเครื่องนึงของท่าน</p>
           <Image src={marker} width="25%"></Image>

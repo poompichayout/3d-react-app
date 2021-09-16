@@ -14,7 +14,7 @@ const HeaderNew = () => {
       <Col xs={20} align="middle">
         <StyledTitle>Cardiac Catheterization</StyledTitle>
       </Col>
-      <Col xs={10} md={9} align="right" style={{ margin: 0 }}>
+      <Col xs={24} md={0} align="middle" style={{ margin: 0 }}>
         <HoverableImage
           preview={false}
           src={angiogram}
@@ -23,7 +23,19 @@ const HeaderNew = () => {
           style={{ cursor: "pointer" }}
         />
       </Col>
-      <Col xs={3} md={3} align="middle" style={{ margin: 0 }}>
+      <Col xs={0} md={9} align="right" style={{ margin: 0 }}>
+        <HoverableImage
+          preview={false}
+          src={angiogram}
+          width="80%"
+          onClick={() => (window.location.href = "/app/angiogram")}
+          style={{ cursor: "pointer" }}
+        />
+      </Col>
+      <Col xs={15} md={0} align="middle" style={{ marginBottom: "1em" }}>
+        <LandingButton href="/app/angiogram">Angiogram</LandingButton>
+      </Col>
+      <Col xs={0} md={3} align="middle" style={{ margin: 0 }}>
         <Image
           preview={false}
           src={heart}
@@ -31,7 +43,8 @@ const HeaderNew = () => {
           style={{ marginTop: "15%" }}
         />
       </Col>
-      <Col xs={10} md={10} align="left" style={{ margin: 0 }}>
+
+      <Col xs={24} md={0} align="middle" style={{ margin: 0 }}>
         <HoverableImage
           preview={false}
           src={vassel}
@@ -40,10 +53,24 @@ const HeaderNew = () => {
           style={{ cursor: "pointer" }}
         />
       </Col>
-      <Col xs={10} md={10} align="middle">
+      <Col xs={0} md={10} align="left" style={{ margin: 0 }}>
+        <HoverableImage
+          preview={false}
+          src={vassel}
+          width="75%"
+          onClick={() => (window.location.href = "/app/coronary_arteries")}
+          style={{ cursor: "pointer" }}
+        />
+      </Col>
+      <Col xs={15} md={0} align="middle">
+        <LandingButton href="/app/coronary_arteries">
+          Coronary arteries
+        </LandingButton>
+      </Col>
+      <Col xs={0} md={10} align="middle">
         <LandingButton href="/app/angiogram">Angiogram</LandingButton>
       </Col>
-      <Col xs={10} md={10} align="middle">
+      <Col xs={0} md={10} align="middle">
         <LandingButton href="/app/coronary_arteries">
           Coronary arteries
         </LandingButton>
@@ -89,6 +116,7 @@ const HoverableImage = styled(Image)`
 const LandingButton = styled(Button).attrs({
   type: "primary",
   shape: "round",
+  size: "large",
 })`
   margin-top: 2em;
   width: 80%;

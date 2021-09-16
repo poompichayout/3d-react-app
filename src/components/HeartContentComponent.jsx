@@ -21,15 +21,27 @@ const HeartContentComponent = ({ type, ...props }) => {
         <Typography.Title level={4} style={{ margin: 0, marginBottom: "1em" }}>
           {content?.aka ?? ""}
         </Typography.Title>
-        <ul>
+        <ul style={{ paddingLeft: 0 }}>
           <li key={5}>
             <Typography.Text>
-              <b>Location:</b> {content?.location.map((value, index) => (<Typography.Paragraph style={{ marginBottom: "0", textAlign: "justify" }}>{value}</Typography.Paragraph>))}
+              <b>Location:</b>{" "}
+              {content?.location.map((value, index) => (
+                <Typography.Paragraph
+                  style={{ marginBottom: "0", textAlign: "justify" }}
+                >
+                  {value}
+                </Typography.Paragraph>
+              ))}
             </Typography.Text>
           </li>
           <li key={6}>
             <Typography.Text>
-              <b>Function:</b> <Typography.Paragraph style={{ marginBottom: "0", textAlign: "justify" }}>{content?.function}</Typography.Paragraph>
+              <b>Function:</b>{" "}
+              <Typography.Paragraph
+                style={{ marginBottom: "0", textAlign: "justify" }}
+              >
+                {content?.function}
+              </Typography.Paragraph>
             </Typography.Text>
           </li>
           {content.defects ? (
@@ -37,7 +49,14 @@ const HeartContentComponent = ({ type, ...props }) => {
               <Typography.Text>
                 <b>Importance in cardiovascular defects:</b>
                 {content.defects?.map((value, index) => (
-                  <Typography.Paragraph key={index} style={{ textIndent: "1em", marginBottom: "0", textAlign: "justify" }}>
+                  <Typography.Paragraph
+                    key={index}
+                    style={{
+                      textIndent: "1em",
+                      marginBottom: "0",
+                      textAlign: "justify",
+                    }}
+                  >
                     {value}
                   </Typography.Paragraph>
                 ))}
@@ -104,7 +123,13 @@ const HeartContentComponent = ({ type, ...props }) => {
                     }
                     style={{ marginTop: "1em", border: "solid 2px" }}
                   />
-                  <p><Typography.Text style={{ textAlign: "center" }}>{type === "RCA"? content.best_views[1] : content.best_views[index]}</Typography.Text></p>
+                  <p>
+                    <Typography.Text style={{ textAlign: "center" }}>
+                      {type === "RCA"
+                        ? content.best_views[1]
+                        : content.best_views[index]}
+                    </Typography.Text>
+                  </p>
                 </Col>
               ))}
             </Row>

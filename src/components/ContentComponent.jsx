@@ -1,14 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  Button,
-  Col,
-  Collapse,
-  Image,
-  Popover,
-  Row,
-  Space,
-  Typography,
-} from "antd";
+import { Col, Collapse, Image, Row, Space, Typography, List } from "antd";
 import Content from "src/contents/contents.json";
 import blank from "src/images/white-image.png";
 const images = require.context("../", true);
@@ -25,56 +16,43 @@ const ContentComponent = ({ type }) => {
     <>
       <Row justify="center" align="top" style={{ marginTop: "2em" }}>
         <Col xs={20}>
-          <Row aign="middle">
-            <Space size="large">
-              <Typography.Title style={{ fontSize: "2em" }}>
-                {type.split("-")[0].toUpperCase() +
-                  " " +
-                  capitalizeFirstLetter(type.split("-")[1])}
-              </Typography.Title>
-              <Popover
-                placement="rightTop"
-                title={<span>TIPS</span>}
-                content={
-                  <>
-                    <Typography.Title level={3}>
-                      {type.split("-")[0].toUpperCase()}
-                    </Typography.Title>
-                    <ul>
-                      {contentText[type.split("-")[0].toLowerCase()].map(
-                        (value, index) => (
-                          <li key={index}>{value}</li>
-                        )
-                      )}
-                    </ul>
-                    <Typography.Title level={3}>
-                      {capitalizeFirstLetter(type.split("-")[1])}
-                    </Typography.Title>
-                    <ul>
-                      {contentText[type.split("-")[1].toLowerCase()].map(
-                        (value, index) => (
-                          <li key={index}>{value}</li>
-                        )
-                      )}
-                    </ul>
-                  </>
-                }
-                trigger="click"
-              >
-                <Button type="primary">TIPS</Button>
-              </Popover>
-            </Space>
+          <Typography.Title style={{ fontSize: "2em" }}>
+            {type.split("-")[0].toUpperCase() +
+              " " +
+              capitalizeFirstLetter(type.split("-")[1])}
+          </Typography.Title>
+          <Row justify="left">
+            <Col xs={24} md={24}>
+              <Typography.Text> is best for visualization of </Typography.Text>
+              <ul style={{ paddingLeft: "1.5em" }}>
+                {content.header.map((value, index) => {
+                  return <li key={index}>{value}</li>;
+                })}
+              </ul>
+            </Col>
+            <Col xs={24} md={24}>
+              <Typography.Title level={5}>TIPS</Typography.Title>
+              <Collapse>
+                <Panel header={type.split("-")[0].toUpperCase()}>
+                  <List
+                    size="small"
+                    dataSource={contentText[type.split("-")[0].toLowerCase()]}
+                    renderItem={(item) => <List.Item>{item}</List.Item>}
+                  />
+                </Panel>
+                <Panel header={capitalizeFirstLetter(type.split("-")[1])}>
+                  <List
+                    size="small"
+                    dataSource={contentText[type.split("-")[1].toLowerCase()]}
+                    renderItem={(item) => <List.Item>{item}</List.Item>}
+                  />
+                </Panel>
+              </Collapse>
+            </Col>
           </Row>
-
-          <Typography.Text> is best for visualization of </Typography.Text>
-          <ul>
-            {content.header.map((value, index) => {
-              return <li key={index}>{value}</li>;
-            })}
-          </ul>
         </Col>
       </Row>
-      <Row justify="center" align="top">
+      <Row justify="center" align="top" style={{ marginTop: "2em" }}>
         <Col xs={22}>
           <Collapse defaultActiveKey={[0, 1, 2]}>
             {content.contents.map((value, index) => {
@@ -179,7 +157,16 @@ const ContentComponent = ({ type }) => {
                      */}
                   </Row>
                   {value.content.map((s, idx) => (
-                    <p key={idx} style={{ textAlign: "justify", textIndent: "2em", marginBottom: 0 }}>{s}</p>
+                    <p
+                      key={idx}
+                      style={{
+                        textAlign: "justify",
+                        textIndent: "2em",
+                        marginBottom: 0,
+                      }}
+                    >
+                      {s}
+                    </p>
                   ))}
                 </Panel>
               );

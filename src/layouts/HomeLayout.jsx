@@ -1,18 +1,16 @@
-import React from 'react'
+import React from "react";
 import { Outlet } from "react-router-dom";
 import AboutUsTab from "src/components/AboutUsTab";
 import NavBar from "src/components/NavBar";
-import Footer from '../components/Footer';
 
 const HomeLayout = () => {
-    return (
-        <div>
-            <NavBar />
-            <Outlet />
-            <AboutUsTab />
-            <Footer />
-        </div>
-    )
-}
+  return (
+    <div>
+      <NavBar />
+      <Outlet />
+      <AboutUsTab />
+    </div>
+  );
+};
 
-export default HomeLayout
+export default HomeLayout;

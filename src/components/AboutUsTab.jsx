@@ -1,7 +1,6 @@
 import React from "react";
-import { Typography, Avatar, Card, Space } from "antd";
+import { Typography, Avatar, List, Divider } from "antd";
 import { Row, Col, Image } from "antd";
-import { MailOutlined } from "@ant-design/icons";
 
 import styled from "styled-components";
 import mixed from "../images/mixed.png";
@@ -11,7 +10,7 @@ const { Title } = Typography;
 const AboutUsTab = () => {
   return (
     <div id="about_us">
-      <RowStyled justify="center" style={{ paddingBottom: "1em" }}>
+      <RowStyled justify="center">
         <Col xs={18}>
           <StyledTitle>About Us</StyledTitle>
         </Col>
@@ -19,100 +18,67 @@ const AboutUsTab = () => {
       <RowStyled
         justify="center"
         align="top"
-        style={{ textAlign: "left", paddingTop: "0" }}
+        style={{
+          textAlign: "left",
+          paddingTop: "0",
+        }}
       >
-        <CardCol xs={20} lg={6}>
-          <Card
-            style={{ width: 300 }}
-            actions={[
-              <SpaceStyled align="center">
-                <MailOutlined key="setting" />
-                methits.ase@dome.tu.ac.th
-              </SpaceStyled>,
-            ]}
-          >
-            <Card.Meta
-              avatar={
-                <Avatar
-                  style={{
-                    color: "#f56a00",
-                    backgroundColor: "#fde3cf",
-                  }}
-                >
-                  M
-                </Avatar>
-              }
-              title="Methits A."
-              description="Contact: (+66) 83-979-9120"
-            />
-          </Card>
-        </CardCol>
-        <CardCol xs={20} lg={6}>
-          <Card
-            style={{ width: 300 }}
-            actions={[
-              <SpaceStyled align="center">
-                <MailOutlined key="setting" />
-                manassanan.ark@dome.tu.ac.th
-              </SpaceStyled>,
-            ]}
-          >
-            <Card.Meta
-              avatar={
-                <Avatar
-                  style={{
-                    color: "#f56a00",
-                    backgroundColor: "#fde3cf",
-                  }}
-                >
-                  M
-                </Avatar>
-              }
-              title="Manassanan A."
-              description="Contact: (+66) 92-451-4562"
-            />
-          </Card>
-        </CardCol>
-        <CardCol xs={20} lg={6}>
-          <Card
-            style={{ width: 300 }}
-            actions={[
-              <SpaceStyled align="center">
-                <MailOutlined key="setting" />
-                ploy.rat@dome.tu.ac.th
-              </SpaceStyled>,
-            ]}
-          >
-            <Card.Meta
-              avatar={
-                <Avatar
-                  style={{
-                    color: "#f56a00",
-                    backgroundColor: "#fde3cf",
-                  }}
-                >
-                  P
-                </Avatar>
-              }
-              title="Ploy R."
-              description="Contact: (+66) 83-713-0930"
-            />
-          </Card>
-        </CardCol>
-      </RowStyled>
-      <RowStyled justify="center">
-        <Col xs={18}>
-          <Typography.Title level={3}>Special Thanks To</Typography.Title>
+        <Col xs={20} md={10} lg={8} xl={6} style={{ paddingBottom: "3em" }}>
+          <Typography.Title level={4}>Organizer</Typography.Title>
+          <Divider />
+          <List
+            itemLayout="horizontal"
+            dataSource={data}
+            renderItem={(item) => (
+              <List.Item>
+                <List.Item.Meta
+                  avatar={
+                    <Avatar
+                      style={{
+                        color: "#f56a00",
+                        backgroundColor: "#fde3cf",
+                      }}
+                    >
+                      {item.nickname}
+                    </Avatar>
+                  }
+                  title={<>{item.title}</>}
+                  description={
+                    <>
+                      <p style={{ marginBottom: "0.25em" }}>
+                        Contact: {item.contact}
+                      </p>
+                      <p style={{ marginBottom: "0.25em" }}>
+                        E-mail: {item.email}
+                      </p>
+                    </>
+                  }
+                />
+              </List.Item>
+            )}
+          />
         </Col>
-      </RowStyled>
-      <RowStyled
-        justify="center"
-        align="top"
-        style={{ minHeight: "30vh", padding: "0 0 2em 0" }}
-      >
-        <Col xs={24}>
-          <Image width={300} src={mixed} preview={false} />
-          <Image src={hospital} height={110} width={281.6} preview={false} />
+        <Divider type="vertical" />
+        <Col
+          xs={20}
+          md={8}
+          lg={5}
+          xl={4}
+          align="left"
+          style={{ paddingBottom: "3em" }}
+        >
+          <Typography.Title level={4} style={{ whiteSpace: "nowrap" }}>
+            Special Thanks To
+          </Typography.Title>
+          <Divider />
+          <Image width={200} src={mixed} preview={false} /> <br />
+          <Image
+            src={hospital}
+            height={78.125}
+            width={200}
+            preview={false}
+            style={{ marginTop: "0.5em" }}
+          />
         </Col>
       </RowStyled>
     </div>
@@ -140,15 +106,25 @@ const StyledTitle = styled(Title)`
   }
 `;
 
-const SpaceStyled = styled(Space)`
-  cursor: default;
-  color: rgba(58, 52, 51, 0.7);
-`;
-
-const CardCol = styled(Col)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
+const data = [
+  {
+    title: "Methits A.",
+    nickname: "M",
+    contact: "(+66) 83-979-9120",
+    email: "methits.ase@dome.tu.ac.th",
+  },
+  {
+    title: "Manassanan A.",
+    nickname: "M",
+    contact: "(+66) 92-451-4562",
+    email: "manassanan.ark@dome.tu.ac.th",
+  },
+  {
+    title: "Ploy R.",
+    nickname: "P",
+    contact: "(+66) 83-713-0930",
+    email: "ploy.rat@dome.tu.ac.th",
+  },
+];
 
 export default AboutUsTab;

@@ -47,8 +47,8 @@ function HowToUse() {
               xs={24}
               sm={24}
               md={24}
-              lg={22}
-              xl={20}
+              lg={18}
+              xl={14}
               align="middle"
               style={{
                 marginBottom: "2em",

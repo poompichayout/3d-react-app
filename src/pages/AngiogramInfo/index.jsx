@@ -13,11 +13,10 @@ const AngiogramInfo = () => {
         <ContentComponent type={params.id} />
         <Button
           type="primary"
-          size="large"
           style={{ marginTop: "2em" }}
-          onClick={() => window.location.href = "/app/angiogram"}
+          onClick={() => (window.location.href = "/app/angiogram")}
         >
-          Back
+          Back To Angiogram Model
         </Button>
       </Col>
     </RowStyled>

@@ -6,6 +6,7 @@ import ContentModal from "src/components/ContentModal";
 import { Helmet } from "react-helmet";
 
 import styled from "styled-components";
+import HeartAR from "src/models/HeartAR";
 const { Title } = Typography;
 
 const Angiogram = () => {
@@ -41,7 +42,7 @@ const Angiogram = () => {
         <title>Angiogram - Cardiac Catheterization</title>
       </Helmet>
       <RowStyled justify="center">
-        <Col xs={24} lg={15} style={{ minHeight: "60vh" }}>
+        <Col xs={24} xl={15} style={{ minHeight: "60vh" }}>
           <CathLabCanvas>
             <Model
               position={[-2, -4.25, -1.5]}
@@ -50,9 +51,16 @@ const Angiogram = () => {
               xOption={x}
               xdegree={xDegree}
             />
+            <HeartAR
+              position={[-2, 4, -5]}
+              option={turnOption}
+              zdegree={zDegree}
+              xOption={x}
+              xdegree={xDegree}
+            />
           </CathLabCanvas>
         </Col>
-        <Col xs={20} md={15} lg={8}>
+        <Col xs={20} md={15} xl={8}>
           <Row
             justify="center"
             align="middle"
@@ -127,7 +135,7 @@ const Angiogram = () => {
             </Col>
           </Row>
         </Col>
-        <Col lg={3} />
+        <Col xl={3} />
       </RowStyled>
       <ContentModal
         visible={isModalVisible}

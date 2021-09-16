@@ -13,11 +13,10 @@ const VasselInfo = () => {
         <HeartContentComponent type={params.id} />
         <Button
           type="primary"
-          size="large"
-          style={{ marginTop: "2em" }}
-          onClick={() => window.location.href = "/app/coronary_arteries"}
+          style={{ marginTop: "2em", marginLeft: "1em" }}
+          onClick={() => (window.location.href = "/app/coronary_arteries")}
         >
-          Back
+          Back To Coronary Arteries Model
         </Button>
       </Col>
     </RowStyled>

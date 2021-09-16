@@ -40,29 +40,39 @@ const Vassel = () => {
         <title>Coronary Arteries - Cardiac Catheterization</title>
       </Helmet>
       <RowStyled justify="center">
-        <Col xs={24} md={15} style={{ minHeight: "60vh" }}>
+        <Col xs={24} sm={15} md={15} style={{ minHeight: "60vh" }}>
           <Tabs defaultActiveKey="1" centered style={{ height: "100%" }}>
-            <TabPane tab="Right Dominant" key="1" style={{ height: "80vh" }}>
+            <TabPane tab="Right Dominant" key="1" style={{ height: "60vh" }}>
               <HeartCanvas>
-                <RightHeart position={[0, 0.5, 0]} rotation={[0, -0.65, 0]} handleClick={showModal} />
+                <RightHeart
+                  position={[0, 0.5, 0]}
+                  rotation={[0, -0.65, 0]}
+                  handleClick={showModal}
+                />
               </HeartCanvas>
             </TabPane>
-            <TabPane tab="Left Dominant" key="2" style={{ height: "80vh" }}>
+            <TabPane tab="Left Dominant" key="2" style={{ height: "60vh" }}>
               <HeartCanvas>
-                <LeftHeart position={[0, 0.5, 0]} rotation={[0, -0.65, 0]} handleClick={showModal} />
+                <LeftHeart
+                  position={[0, 0.5, 0]}
+                  rotation={[0, -0.65, 0]}
+                  handleClick={showModal}
+                />
               </HeartCanvas>
             </TabPane>
-            <TabPane tab="Co Dominant" key="3" style={{ height: "80vh" }}>
+            <TabPane tab="Co Dominant" key="3" style={{ height: "60vh" }}>
               <HeartCanvas>
-                <CoHeart position={[0, 0.5, 0]} rotation={[0, -0.65, 0]} handleClick={showModal} />
+                <CoHeart
+                  position={[0, 0.5, 0]}
+                  rotation={[0, -0.65, 0]}
+                  handleClick={showModal}
+                />
               </HeartCanvas>
             </TabPane>
           </Tabs>
         </Col>
         <Col xs={24} md={15}>
-          <Button onClick={showARModal}>
-            Start In AR
-          </Button>
+          <Button onClick={showARModal}>Start In AR</Button>
         </Col>
       </RowStyled>
 
@@ -97,10 +107,7 @@ const Vassel = () => {
         width={1280}
         type={type}
       />
-      <ARModal
-        visible={arModalVisible}
-        onCancel={closeARModal}
-      />
+      <ARModal visible={arModalVisible} onCancel={closeARModal} />
     </div>
   );
 };
