@@ -120,6 +120,7 @@ const arteriesMenu = [
   "LM",
   "LAD",
   "LCx",
+  "OM",
   "Septal branch",
   "Diagonal branch",
   "RCA",

@@ -133,7 +133,7 @@ const leftDataSource = [
   {
     key: "1",
     name: "Left Main",
-    description: "AP / LAO cranial / LAO caudal",
+    description: "AP caudal / RAO caudal / LAO cranial / LAO caudal",
   },
   {
     key: "2",
@@ -148,22 +148,27 @@ const leftDataSource = [
   {
     key: "4",
     name: "Distal LAD",
-    description: "AP / RAO cranial",
+    description: "RAO cranial",
   },
   {
     key: "5",
     name: "Diagonal",
-    description: "RAO cranial / LAO cranial / LAO caudal",
+    description: "RAO cranial / LAO cranial",
   },
   {
     key: "6",
-    name: "Proximal LCx",
-    description: "RAO caudal / LAO caudal",
+    name: "Septal",
+    description: "LAO cranial",
   },
   {
     key: "7",
+    name: "Left Circumflex",
+    description: "RAO caudal / LAO caudal / AP caudal",
+  },
+  {
+    key: "8",
     name: "Obtuse Marginal",
-    description: "RAO caudal / LAO caudal / RAO / RAO cranial",
+    description: "RAO caudal / LAO caudal / LAO cranial",
   },
 ];
 
@@ -171,12 +176,12 @@ const rightDataSource = [
   {
     key: "1",
     name: "Proximal RCA",
-    description: "LAO / LAO caudal",
+    description: "LAO cranial / AP caudal",
   },
   {
     key: "2",
     name: "Middle RCA",
-    description: "LAO / RAO 30",
+    description: "LAO cranial",
   },
   {
     key: "3",
@@ -185,13 +190,18 @@ const rightDataSource = [
   },
   {
     key: "4",
-    name: "PDA",
-    description: "LAO / AP cranial",
+    name: "Right marginal",
+    description: "LAO cranial",
   },
   {
     key: "5",
+    name: "PDA",
+    description: "AP cranial",
+  },
+  {
+    key: "6",
     name: "PL",
-    description: "LAO cranial / RAO cranial",
+    description: "AP cranial",
   },
 ];
 
@@ -202,7 +212,7 @@ const columns = [
     key: "name",
   },
   {
-    title: "Best Angiographic View",
+    title: "Angiographic View",
     dataIndex: "description",
     key: "description",
   },

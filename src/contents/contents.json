@@ -1,6 +1,6 @@
 {
   "rao-cranial": {
-    "header": ["LAD", "Diagonal branches", "Mid RCA and PDA"],
+    "header": ["LAD", "Diagonal branches"],
     "contents": [
       {
         "title": "Left Coronary artery",
@@ -31,16 +31,12 @@
     ]
   },
   "rao-caudal": {
-    "header": [
-      "Distal Left Main Stem (LMS)",
-      "Proximal segment of the LAD",
-      "Left circumflex artery (LCx) and its branches"
-    ],
+    "header": ["Distal LM", "Prox LAD", "LCx", "OM"],
     "contents": [
       {
         "title": "Left Coronary artery",
         "content": [
-          "RAO caudal view shows the LMCA bifurcation, perpendicular to that of the LAO cranial angle. The origin and course of LCx or obtuse marginal branches and proximal LAD segment are seen clearly. This view is one of the two best for visualization of LCx. LAD beyond the proximal segment is obscured by overlapped diagonals. However, the apical segment of the LAD artery is displayed clearly."
+          "RAO caudal view shows the LMCA bifurcation, perpendicular to that of the LAO cranial angle. The origin and course of LCx or OM branches and proximal LAD segment are seen clearly. This view is one of the two best for visualization of LCx. LAD beyond the proximal segment is obscured by overlapped diagonals. However, the apical segment of the LAD artery is displayed clearly."
         ],
         "pic_left": "./images/LCA/RAO caudal.JPEG",
         "pic_right": "./images/LCA RAO Cau.gif"
@@ -54,7 +50,7 @@
       {
         "title": "Example",
         "content": [
-          "RAO view can shows the mid RCA and the length of the PDA and posterolateral branches. Septal branches coursing upward from the PDA, supplying occluded LAD artery via collaterals, may be clearly identified without cranial or caudal angulation."  
+          "RAO view can shows the mid RCA and the length of the PDA and posterolateral branches. Septal branches coursing upward from the PDA, supplying occluded LAD artery via collaterals, may be clearly identified without cranial or caudal angulation."
         ],
         "pic_left": "./images/RCA/RAO example.JPEG",
         "pic_mid": "./images/RCA RAO30.gif",
@@ -64,17 +60,19 @@
   },
   "lao-cranial": {
     "header": [
-      "Ostium of the LM",
-      "Origin of the diagonals from the LAD",
-      "Ostium and proximal RCA"
+      "Ostium of LM",
+      "LAD",
+      "Origin of diagonal branches",
+      "Septal branches",
+      "RCA"
     ],
     "contents": [
       {
         "title": "Left Coronary artery",
         "content": [
-          "\tLAO cranial view shows LM (slightly foreshortened), LAD, and its diagonal branches. Septal (coursing to the left) and diagonal branches (to the right) are separated clearly. LCx and marginal branches are foreshortened and overlapped, although the posterolateral and posterior descending branches of left-dominant circulation are displayed clearly.",
-          "\tDeep inspiration, which moves the density of the diaphragm down and out of the field, is helpful. LAO angle (>30 degrees) should be set so that the LAD artery course is parallel to the spine and stays in the “lucent wedge” bordered by the spine on the medial edge and the curve of the diaphragm. Cranial angulation tilts the LM down and permits a view of LAD-LCx bifurcation.",
-          "\tLAO cranial angulation that is too steep or inspiration that is too shallow produces considerable overlapping with the diaphragm and liver, degrading the image."
+          "LAO cranial view shows LM (slightly foreshortened), LAD, and its diagonal branches. Septal (coursing to the left) and diagonal branches (to the right) are separated clearly. LCx and OM are foreshortened and overlapped, although the posterolateral and posterior descending branches of left-dominant circulation are displayed clearly.",
+          "Deep inspiration, which moves the density of the diaphragm down and out of the field, is helpful. LAO angle (>30 degrees) should be set so that the LAD artery course is parallel to the spine and stays in the “lucent wedge” bordered by the spine on the medial edge and the curve of the diaphragm. Cranial angulation tilts the LM down and permits a view of LAD-LCx bifurcation.",
+          "LAO cranial angulation that is too steep or inspiration that is too shallow produces considerable overlapping with the diaphragm and liver, degrading the image."
         ],
         "pic_left": "./images/LCA/LAO cranial.JPEG",
         "pic_right": "./images/LCA LAO Cr.gif"
@@ -82,7 +80,7 @@
       {
         "title": "Right Coronary artery",
         "content": [
-          "LAO cranial view shows the origin of the RCA, the entire length of the mid RCA, and the bifurcation of posterior descending artery (the crux of PDA). Cranial angulation tilts the PDA down to see vessel contour and to reduce foreshortening. Deep inspiration is necessary to clear the diaphragm. The PDA and posterolateral branches are slightly foreshortened in this view."
+          "LAO cranial view shows the origin of the RCA, the entire length of the mid RCA, the bifurcation of posterior descending artery (the crux of PDA), and also RMA. Cranial angulation tilts the PDA down to see vessel contour and to reduce foreshortening. Deep inspiration is necessary to clear the diaphragm. The PDA and posterolateral branches are slightly foreshortened in this view."
         ],
         "pic_left": "./images/RCA/LAO cranial.jpeg",
         "pic_right": "./images/RCA LAO Cr.gif"
@@ -98,7 +96,7 @@
     ]
   },
   "lao-caudal": {
-    "header": ["LM", "Ostium of LCx and OM", "Ostium of LAD"],
+    "header": ["LM", "Ostium of LCx", "OM"],
     "contents": [
       {
         "title": "Left Coronary artery",
@@ -128,12 +126,7 @@
     ]
   },
   "ap-cranial": {
-    "header": [
-      "LM",
-      "Proximal LAD",
-      "Mid LAD",
-      "Distal RCA and its bifurcation"
-    ],
+    "header": ["Prox RCA", "Distal RCA", "PDA branches", "PL branches"],
     "contents": [
       {
         "title": "Left Coronary artery",
@@ -154,7 +147,7 @@
     ]
   },
   "ap-caudal": {
-    "header": ["LM bifurcation", "Prox LAD, Prox LCx", "OM"],
+    "header": ["LM", "Prox LCx"],
     "contents": [
       {
         "title": "Left Coronary artery",

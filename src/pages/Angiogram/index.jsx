@@ -93,7 +93,7 @@ const Angiogram = () => {
               <StyledTitle>Select Angiographic Views</StyledTitle>
               <Radio.Group
                 onChange={onChange}
-                defaultValue="AP"
+                defaultValue={turnOption}
                 buttonStyle="solid"
                 style={{ textAlign: "left" }}
               >
@@ -112,7 +112,7 @@ const Angiogram = () => {
               <StyledTitle>Select an Angulation</StyledTitle>
               <Radio.Group
                 onChange={onCaudalChange}
-                defaultValue="CRANIAL"
+                defaultValue={x}
                 buttonStyle="solid"
                 style={{ textAlign: "left" }}
               >

@@ -2,11 +2,66 @@ import React, { useEffect, useState } from "react";
 import { Col, Image, Row, Typography } from "antd";
 import Content from "src/contents/heartContents.json";
 import blank from "src/images/white-image.png";
+import { useNavigate } from "react-router";
 const images = require.context("../", true);
 const { Link } = Typography;
 
 const HeartContentComponent = ({ type, ...props }) => {
   const [content, setContent] = useState(Content[type]);
+  const navigate = useNavigate();
+
+  const RCAOptimalViews = () => {
+    return (
+      <>
+        <li>
+          {"Proximal: "}
+          <Link
+            underline
+            to="#"
+            onClick={() => navigate(`/app/angiogram/info/lao-cranial`)}
+          >
+            LAO Cranial
+          </Link>
+          {", "}
+          <Link
+            underline
+            to="#"
+            onClick={() => navigate(`/app/angiogram/info/ap-cranial`)}
+          >
+            AP Cranial
+          </Link>
+        </li>
+        <li>
+          {"Mid: "}
+          <Link
+            underline
+            to="#"
+            onClick={() => navigate(`/app/angiogram/info/lao-cranial`)}
+          >
+            LAO Cranial
+          </Link>
+        </li>
+        <li>
+          {"Distal: "}
+          <Link
+            underline
+            to="#"
+            onClick={() => navigate(`/app/angiogram/info/lao-cranial`)}
+          >
+            LAO Cranial
+          </Link>
+          {", "}
+          <Link
+            underline
+            to="#"
+            onClick={() => navigate(`/app/angiogram/info/ap-cranial`)}
+          >
+            AP Cranial
+          </Link>
+        </li>
+      </>
+    );
+  };
 
   useEffect(() => {
     setContent(Content[type]);
@@ -27,7 +82,11 @@ const HeartContentComponent = ({ type, ...props }) => {
               <b>Location:</b>{" "}
               {content?.location.map((value, index) => (
                 <Typography.Paragraph
-                  style={{ marginBottom: "0", textAlign: "justify" }}
+                  style={{
+                    marginBottom: "0",
+                    textAlign: "justify",
+                    textIndent: "1em",
+                  }}
                 >
                   {value}
                 </Typography.Paragraph>
@@ -38,7 +97,11 @@ const HeartContentComponent = ({ type, ...props }) => {
             <Typography.Text>
               <b>Function:</b>{" "}
               <Typography.Paragraph
-                style={{ marginBottom: "0", textAlign: "justify" }}
+                style={{
+                  marginBottom: "0",
+                  textAlign: "justify",
+                  textIndent: "1em",
+                }}
               >
                 {content?.function}
               </Typography.Paragraph>
@@ -67,14 +130,13 @@ const HeartContentComponent = ({ type, ...props }) => {
           <li key={9}>
             <Typography.Text>
               <ul>
-                <b>Best view at:</b>
-                {content.best_views.map((value, index) => (
-                  <li key={index}>
-                    {type === "RCA" && index === 0 ? (
-                      value
-                    ) : type === "RCA" && index === 1 ? (
-                      <p>
-                        Distal:{" "}
+                <b>Optimal view at:</b>
+                {type === "RCA" ? (
+                  <RCAOptimalViews />
+                ) : (
+                  content.best_views.map((value, index) => (
+                    <li key={index}>
+                      {
                         <Link
                           underline
                           to="#"
@@ -87,23 +149,10 @@ const HeartContentComponent = ({ type, ...props }) => {
                         >
                           {value}
                         </Link>
-                      </p>
-                    ) : (
-                      <Link
-                        underline
-                        to="#"
-                        onClick={() =>
-                          (window.location.href = `/app/angiogram/info/${value
-                            .split(" ")
-                            .map((x) => x.toLowerCase())
-                            .join("-")}`)
-                        }
-                      >
-                        {value}
-                      </Link>
-                    )}
-                  </li>
-                ))}
+                      }
+                    </li>
+                  ))
+                )}
               </ul>
             </Typography.Text>
           </li>
@@ -125,9 +174,7 @@ const HeartContentComponent = ({ type, ...props }) => {
                   />
                   <p>
                     <Typography.Text style={{ textAlign: "center" }}>
-                      {type === "RCA"
-                        ? content.best_views[1]
-                        : content.best_views[index]}
+                      {content.best_views[index]}
                     </Typography.Text>
                   </p>
                 </Col>

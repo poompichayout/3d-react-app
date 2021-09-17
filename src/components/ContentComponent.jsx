@@ -23,7 +23,7 @@ const ContentComponent = ({ type }) => {
           </Typography.Title>
           <Row justify="left">
             <Col xs={24} md={24}>
-              <Typography.Text> is best for visualization of </Typography.Text>
+              <Typography.Text>is optimal for visualization of</Typography.Text>
               <ul style={{ paddingLeft: "1.5em" }}>
                 {content.header.map((value, index) => {
                   return <li key={index}>{value}</li>;

@@ -22,37 +22,64 @@ export default function RightHeart(props) {
           </Div1>
         </Html>
         <Html position={[0.3, 0, -0.71]} zIndexRange={[900, 0]}>
-          <Div1 content="LCx" onClick={props.handleClick}>2</Div1>
+          <Div1 content="LCx" onClick={props.handleClick}>
+            2
+          </Div1>
         </Html>
         <Html zIndexRange={[900, 0]}>
-          <Div1 content="LAD" onClick={props.handleClick}>3</Div1>
+          <Div1 content="LAD" onClick={props.handleClick}>
+            3
+          </Div1>
         </Html>
         <Html position={[-0.2, -0.5, 0.5]} zIndexRange={[900, 0]}>
-          <Div1 content="Septal" onClick={props.handleClick}>4</Div1>
+          <Div1 content="Septal" onClick={props.handleClick}>
+            4
+          </Div1>
         </Html>
         <Html position={[-1.1, 0, 0]} zIndexRange={[900, 0]}>
-          <Div1 content="RCA" onClick={props.handleClick}>5</Div1>
+          <Div1 content="RCA" onClick={props.handleClick}>
+            5
+          </Div1>
         </Html>
         <Html position={[-0.8, -1.1, 0.5]} zIndexRange={[900, 0]}>
-          <Div1 content="RMA" onClick={props.handleClick}>6</Div1>
+          <Div1 content="RMA" onClick={props.handleClick}>
+            6
+          </Div1>
         </Html>
         <Html position={[-0.8, -1.1, -0.71]} zIndexRange={[900, 0]}>
-          <Div1 content="PDA" onClick={props.handleClick}>7</Div1>
+          <Div1 content="PDA" onClick={props.handleClick}>
+            7
+          </Div1>
         </Html>
         <Html position={[-0.8, -0.8, -0.9]} zIndexRange={[900, 0]}>
-          <Div1 content="PL" onClick={props.handleClick}>8</Div1>
+          <Div1 content="PL" onClick={props.handleClick}>
+            8
+          </Div1>
         </Html>
         <Html position={[0.5, -0.75, 0.1]} zIndexRange={[900, 0]}>
-          <Div1 content="Diagonal" onClick={props.handleClick}>9</Div1>
+          <Div1 content="Diagonal" onClick={props.handleClick}>
+            9
+          </Div1>
         </Html>
         <Html position={[0.6, -0.5, -0.1]} zIndexRange={[900, 0]}>
-          <Div1 content="Diagonal" onClick={props.handleClick}>9</Div1>
+          <Div1 content="Diagonal" onClick={props.handleClick}>
+            9
+          </Div1>
         </Html>
         <Html position={[0.4, -0.85, 0.3]} zIndexRange={[900, 0]}>
-          <Div1 content="Diagonal" onClick={props.handleClick}>9</Div1>
+          <Div1 content="Diagonal" onClick={props.handleClick}>
+            9
+          </Div1>
         </Html>
         <Html position={[0.3, -1.35, 0.3]} zIndexRange={[900, 0]}>
-          <Div1 content="Diagonal" onClick={props.handleClick}>9</Div1>
+          <Div1 content="Diagonal" onClick={props.handleClick}>
+            9
+          </Div1>
+        </Html>
+        <Html position={[0.46, -0.8, -0.8]} zIndexRange={[900, 0]}>
+          <Div1 content="OM" onClick={props.handleClick}>
+            10
+          </Div1>
         </Html>
       </mesh>
     </group>
