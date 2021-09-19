@@ -9,7 +9,7 @@
     "subtitle": "AP",
     "picture_path": [
       "./images/CoronaryArteries/Left main/AP caudal.png",
-      "",
+      "./images/CoronaryArteries/Left main/RAO caudal.png",
       "./images/CoronaryArteries/Left main/LAO cranial.png",
       "./images/CoronaryArteries/Left main/LAO caudal.png"
     ]
@@ -26,15 +26,22 @@
     ],
     "best_views": ["RAO Cranial", "RAO Caudal", "LAO Cranial"],
     "subtitle": "RAO Cranial",
-    "picture_path": ["./images/CoronaryArteries/LAD/RAO cranial.png", "", ""]
+    "picture_path": [
+      "./images/CoronaryArteries/LAD/RAO cranial.png",
+      "./images/CoronaryArteries/LAD/RAO caudal.png",
+      "./images/CoronaryArteries/LAD/LAO cranial.png"
+    ]
   },
   "LCx": {
     "title": "LCx : Left circumflex arteries",
     "location": ["Circumflex artery branches off of the left coronary artery."],
     "function": "Supplies most of the left atrium: the posterior and lateral free walls of the left ventricle, and part of the anterior papillary muscle. In 40-50% of hearts the circumflex artery supplies the artery to the SA node.",
-    "best_views": ["LAO Caudal", "RAO Caudal", "AP Caudal"],
+    "best_views": ["LAO Caudal", "RAO Caudal"],
     "subtitle": "LAO Caudal",
-    "picture_path": ["./images/CoronaryArteries/LCx/LAO caudal.png", "", ""]
+    "picture_path": [
+      "./images/CoronaryArteries/LCx/LAO caudal.png",
+      "./images/CoronaryArteries/LCx/RAO caudal.png"
+    ]
   },
   "OM": {
     "title": "OM : Obtuse marginal",
@@ -42,9 +49,12 @@
       "Branch of coronary arteries that come off the circumflex arteries."
     ],
     "function": "Supply blood flow to the most lateral walls of the left ventricle.",
-    "best_views": ["LAO Cranial", "LAO Caudal", "RAO Caudal"],
+    "best_views": ["LAO Cranial", "RAO Caudal"],
     "subtitle": "LAO Caudal",
-    "picture_path": ["", "", ""]
+    "picture_path": [
+      "./images/CoronaryArteries/OM/LAO cranial.png",
+      "./images/CoronaryArteries/OM/RAO caudal.png"
+    ]
   },
   "Septal": {
     "title": "Septal branch",
@@ -64,7 +74,10 @@
     "function": "Supply blood flow to the anterior and anterolateral walls of the left ventricle. There are usually denoted as D1, D2, D3, etc. ",
     "best_views": ["RAO Cranial", "LAO Cranial"],
     "subtitle": "RAO Cranial",
-    "picture_path": ["./images/CoronaryArteries/Diagonal/RAO cranial.png", ""]
+    "picture_path": [
+      "./images/CoronaryArteries/Diagonal/RAO cranial.png",
+      "./images/CoronaryArteries/Diagonal/LAO cranial.png"
+    ]
   },
   "Septal branch": {
     "title": "Septal branch",
@@ -84,7 +97,10 @@
     "function": "Supply blood flow to the anterior and anterolateral walls of the left ventricle. There are usually denoted as D1, D2, D3, etc. ",
     "best_views": ["RAO Cranial", "LAO Cranial"],
     "subtitle": "RAO Cranial",
-    "picture_path": ["./images/CoronaryArteries/Diagonal/RAO cranial.png", ""]
+    "picture_path": [
+      "./images/CoronaryArteries/Diagonal/RAO cranial.png",
+      "./images/CoronaryArteries/Diagonal/LAO cranial.png"
+    ]
   },
   "RCA": {
     "title": "RCA : Right coronary arteries",
@@ -97,7 +113,10 @@
     ],
     "best_views": ["LAO Cranial", "AP Cranial"],
     "subtitle": "LAO",
-    "picture_path": ["./images/CoronaryArteries/RCA/LAO cranial.png", ""]
+    "picture_path": [
+      "./images/CoronaryArteries/RCA/LAO cranial.png",
+      "./images/CoronaryArteries/RCA/AP cranial.png"
+    ]
   },
   "RMA": {
     "title": "RMA : Right marginal artery",
@@ -119,7 +138,7 @@
     "function": "Supplies the diaphragmatic portion of left ventricle.",
     "best_views": ["AP Cranial"],
     "subtitle": "LAO Cranial",
-    "picture_path": [""]
+    "picture_path": ["./images/CoronaryArteries/PDA/AP cranial.png"]
   },
   "PL": {
     "title": "PL : Posterior left ventricular artery",
@@ -130,6 +149,9 @@
     "function": "Terminal branch of coronary arterial system supplying the inferior portion of the heart.",
     "best_views": ["LAO Cranial", "AP Cranial"],
     "subtitle": "LAO Cranial",
-    "picture_path": ["./images/CoronaryArteries/PL/LAO cranial.png", ""]
+    "picture_path": [
+      "./images/CoronaryArteries/PL/LAO cranial.png",
+      "./images/CoronaryArteries/PL/AP cranial.png"
+    ]
   }
 }

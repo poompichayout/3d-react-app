@@ -12,7 +12,7 @@ export default function Model({ option, xOption, zdegree, xdegree, ...props }) {
   const group = useRef()
   const ref = useRef()
   const subRef = useRef()
-  const { nodes, materials } = useGLTF('/prod/bedwhuman.gltf');
+  const { nodes, materials } = useGLTF('/prod/bedwhuman_edit.gltf');
 
   useFrame(() => {
     const step = 0.1;
@@ -46,12 +46,6 @@ export default function Model({ option, xOption, zdegree, xdegree, ...props }) {
           <mesh geometry={nodes.Cube009_3.geometry} material={materials['Material.002']} />
         </group>
       </object3D>
-      {/* <group position={[0, 7.87, 1.2]} scale={[1.72, 1.39, 1.55]}>
-        <mesh geometry={nodes.Cube009.geometry} material={nodes.Cube009.material} />
-        <mesh geometry={nodes.Cube009_1.geometry} material={nodes.Cube009_1.material} />
-        <mesh geometry={nodes.Cube009_2.geometry} material={nodes.Cube009_2.material} />
-        <mesh geometry={nodes.Cube009_3.geometry} material={materials['Material.002']} />
-      </group> */}
       <group position={[0, 4.27, 6.41]} rotation={[-Math.PI / 2, 1.57, 0]} scale={[0.79, 0.53, 0.79]}>
         <mesh geometry={nodes.Cylinder003.geometry} material={nodes.Cylinder003.material} />
         <mesh geometry={nodes.Cylinder003_1.geometry} material={nodes.Cylinder003_1.material} />
@@ -69,14 +63,20 @@ export default function Model({ option, xOption, zdegree, xdegree, ...props }) {
         position={[0, 3.87, -0.11]}
         rotation={[-1.57, 0, 3.2]}
       />
-      <group position={[0, 1.48, -1.63]} scale={[0.94, 1.02, 0.63]}>
-        <mesh geometry={nodes.Cube.geometry} material={materials.Material} />
-        <mesh geometry={nodes.Cube_1.geometry} material={materials.blue} />
-        <mesh geometry={nodes.Cube_2.geometry} material={materials.grey} />
+      <mesh
+        geometry={nodes.bed.geometry}
+        material={materials.blue}
+        position={[0, 1.48, -1.63]}
+        scale={[0.94, 1.02, 0.63]}
+      />
+      <group position={[0, 1.48, -3.11]} scale={[0.94, 1.02, 0.63]}>
+        <mesh geometry={nodes.Cube001.geometry} material={materials["Material.005"]} />
+        <mesh geometry={nodes.Cube001_1.geometry} material={materials["blue.002"]} />
+        <mesh geometry={nodes.Cube001_2.geometry} material={materials["grey.002"]} />
       </group>
       <mesh geometry={nodes.Plane.geometry} material={materials['Material.004']} position={[0, 4.82, -0.44]} scale={[1.85, 0.82, 2.5]} />
     </group>
   )
 }
 
-useGLTF.preload('/prod/bedwhuman.gltf')
+useGLTF.preload('/prod/bedwhuman_edit.gltf')

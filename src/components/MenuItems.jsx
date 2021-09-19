@@ -28,6 +28,7 @@ const MenuItems = ({ setSelectedKeys, setVisible, ...props }) => {
                 key="title1"
                 onClick={(e) => {
                   navigate("/app/angiogram");
+                  setVisible(false);
                   setSelectedKeys(e.key);
                 }}
               >
@@ -45,6 +46,7 @@ const MenuItems = ({ setSelectedKeys, setVisible, ...props }) => {
                         .map((x) => x.toLowerCase())
                         .join("-")}`
                     );
+                    setVisible(false);
                     setSelectedKeys(e.key);
                   }}
                 >
@@ -59,6 +61,7 @@ const MenuItems = ({ setSelectedKeys, setVisible, ...props }) => {
                 key="title2"
                 onClick={(e) => {
                   navigate("/app/coronary_arteries");
+                  setVisible(false);
                   setSelectedKeys(e.key);
                 }}
               >
@@ -71,6 +74,7 @@ const MenuItems = ({ setSelectedKeys, setVisible, ...props }) => {
                   key={`arteries:${index}`}
                   onClick={(e) => {
                     navigate(`/app/coronary_arteries/info/${value}`);
+                    setVisible(false);
                     setSelectedKeys(e.key);
                   }}
                 >
@@ -98,6 +102,7 @@ const MenuItems = ({ setSelectedKeys, setVisible, ...props }) => {
         title="How to use this app"
         onClick={(e) => {
           navigate("/how_to_use");
+          setVisible(false);
           setSelectedKeys(e.key);
         }}
       >

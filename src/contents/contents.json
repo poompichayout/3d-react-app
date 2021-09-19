@@ -96,7 +96,7 @@
     ]
   },
   "lao-caudal": {
-    "header": ["LM", "Ostium of LCx", "OM"],
+    "header": ["LM", "Ostium of LCx"],
     "contents": [
       {
         "title": "Left Coronary artery",

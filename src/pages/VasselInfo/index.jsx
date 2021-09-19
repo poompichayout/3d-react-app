@@ -20,9 +20,9 @@ const VasselInfo = () => {
         <Button
           type="primary"
           style={{ marginTop: "2em", marginLeft: "1em" }}
-          onClick={() => navigate("/app/coronary_arteries")}
+          onClick={() => navigate(-1)}
         >
-          Back To Coronary Arteries Model
+          Back
         </Button>
       </Col>
     </RowStyled>

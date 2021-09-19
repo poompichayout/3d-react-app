@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Button, Col, Row, Table, Typography } from "antd";
 import { Tabs } from "antd";
 import HeartCanvas from "src/models/HeartCanvas";
-import RightHeart from "src/models/Heart";
-import LeftHeart from "src/models/LeftHeart";
-import CoHeart from "src/models/CoHeart";
+import NewRightHeart from "src/models/NewRightHeart";
+import LeftHeart from "src/models/NewLeftHeart";
+import CoHeart from "src/models/NewCoHeart";
 import HeartContentModal from "src/components/HeartContentModal";
 import ARModal from "src/components/ARModal";
 import { Helmet } from "react-helmet";
@@ -14,6 +14,7 @@ import { useLocation } from "react-router";
 const { TabPane } = Tabs;
 
 const Vassel = () => {
+  const [hovered, onHover] = useState(null);
   const [type, setType] = useState("LM");
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [arModalVisible, setARModalVisible] = useState(false);
@@ -49,29 +50,32 @@ const Vassel = () => {
         <Col xs={24} sm={15} md={15} style={{ minHeight: "60vh" }}>
           <Tabs defaultActiveKey="1" centered style={{ height: "100%" }}>
             <TabPane tab="Right Dominant" key="1" style={{ height: "60vh" }}>
-              <HeartCanvas>
-                <RightHeart
+              <HeartCanvas hovered={hovered}>
+                <NewRightHeart
                   position={[0, 0.5, 0]}
                   rotation={[0, -0.65, 0]}
                   handleClick={showModal}
+                  onHover={onHover}
                 />
               </HeartCanvas>
             </TabPane>
             <TabPane tab="Left Dominant" key="2" style={{ height: "60vh" }}>
-              <HeartCanvas>
+              <HeartCanvas hovered={hovered}>
                 <LeftHeart
                   position={[0, 0.5, 0]}
                   rotation={[0, -0.65, 0]}
                   handleClick={showModal}
+                  onHover={onHover}
                 />
               </HeartCanvas>
             </TabPane>
             <TabPane tab="Co Dominant" key="3" style={{ height: "60vh" }}>
-              <HeartCanvas>
+              <HeartCanvas hovered={hovered}>
                 <CoHeart
                   position={[0, 0.5, 0]}
                   rotation={[0, -0.65, 0]}
                   handleClick={showModal}
+                  onHover={onHover}
                 />
               </HeartCanvas>
             </TabPane>
@@ -168,7 +172,7 @@ const leftDataSource = [
   {
     key: "8",
     name: "Obtuse Marginal",
-    description: "RAO caudal / LAO caudal / LAO cranial",
+    description: "RAO caudal / LAO cranial",
   },
 ];
 

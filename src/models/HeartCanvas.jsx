@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
 import { Canvas, useThree } from "@react-three/fiber";
 import { Loader, OrbitControls } from "@react-three/drei";
+import { EffectComposer, Outline } from "@react-three/postprocessing";
 
 const ZoomWithOrbital = () => {
   const { gl, camera } = useThree();
@@ -10,12 +11,14 @@ const ZoomWithOrbital = () => {
       target={[0, 0, 0]}
       args={[camera, gl.domElement]}
       enableZoom={false}
-      maxAzimuthAngle={1}
+      // minAzimuthAngle={-1}
+      // maxAzimuthAngle={1}
     />
   );
 };
 
-const HeartCanvas = ({ children }) => {
+const HeartCanvas = ({ children, hovered }) => {
+  const selected = hovered ? [...hovered] : undefined;
   return (
     <>
       <Canvas shadows camera={{ position: [0, 1, 3.25], fov: 70 }}>
@@ -28,6 +31,15 @@ const HeartCanvas = ({ children }) => {
           {children}
           <ZoomWithOrbital />
         </Suspense>
+        <EffectComposer multisampling={10} autoClear={false}>
+          <Outline
+            blur
+            selection={selected}
+            visibleEdgeColor={"black"}
+            edgeStrength={100}
+            width={1800}
+          />
+        </EffectComposer>
       </Canvas>
       <Loader />
     </>

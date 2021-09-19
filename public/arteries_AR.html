@@ -10,57 +10,63 @@
     <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
   </head>
 
-  <body style='margin : 0px; overflow: hidden;'>
+  <body style="margin: 0px; overflow: hidden">
     <a-scene
       vr-mode-ui="enabled: false;"
       renderer="logarithmicDepthBuffer: true;"
-      embedded 
+      embedded
       arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
       gesture-detector
-      id="scene">
+      id="scene"
+    >
       <a-assets timeout="30000">
         <a-asset-item id="heart" src="/prod/heartAR.gltf"></a-asset-item>
       </a-assets>
-      <a-marker 
-        preset='hiro' 
-        raycaster="objects: .clickable" 
+      <a-marker
+        preset="hiro"
+        raycaster="objects: .clickable"
         emitevents="true"
         smooth="true"
         smoothCount="10"
         smoothTolerance=".01"
         smoothThreshold="5"
-        cursor="fuse: false; rayOrigin: mouse;">
-        
+        cursor="fuse: false; rayOrigin: mouse;"
+      >
         <a-entity id="h" position="0 0 0" scale="0.5 0.5 0.5">
-          <a-entity position="0 2.15 0" rotation="0 55 0"
-                    gltf-model="#heart"
-                    animation-mixer
-                    shadow="cast: true; receive: false"
-                    class="clickable"
-                    gesture-handler="minScale: 0.25; maxScale: 1"></a-entity>
+          <a-entity
+            position="0 2.15 0"
+            rotation="0 55 0"
+            gltf-model="#heart"
+            animation-mixer
+            shadow="cast: true; receive: false"
+            class="clickable"
+            gesture-handler="minScale: 0.25; maxScale: 1"
+          ></a-entity>
         </a-entity>
-      
       </a-marker>
 
-      <a-marker 
-        type='pattern' url="/pattern-AR_marker.patt"
-        raycaster="objects: .clickable" 
+      <a-marker
+        type="pattern"
+        url="/pattern-AR_marker.patt"
+        raycaster="objects: .clickable"
         emitevents="true"
         smooth="true"
         smoothCount="10"
         smoothTolerance=".01"
         smoothThreshold="5"
-        cursor="fuse: false; rayOrigin: mouse;">
-        
+        cursor="fuse: false; rayOrigin: mouse;"
+      >
         <a-entity id="h" position="0 0 0" scale="0.5 0.5 0.5">
-          <a-entity position="0 2.15 0" rotation="0 55 0"
-                    gltf-model="#heart"
-                    animation-mixer
-                    shadow="cast: true; receive: false"
-                    class="clickable"
-                    gesture-handler="minScale: 0.25; maxScale: 1"></a-entity>
+          <a-entity
+            position="0 2.15 0"
+            rotation="0 55 0"
+            gltf-model="#heart"
+            animation-mixer
+            shadow="cast: true; receive: false"
+            class="clickable"
+            gesture-handler="minScale: 0.25; maxScale: 1"
+          ></a-entity>
         </a-entity>
-      
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
@@ -70,11 +76,11 @@
       sceneEl.addEventListener("twofingermove", handleScale);
 
       sceneEl.addEventListener("markerFound", (e) => {
-          isMarkerVisible = true;
+        isMarkerVisible = true;
       });
 
       sceneEl.addEventListener("markerLost", (e) => {
-          isMarkerVisible = false;
+        isMarkerVisible = false;
       });
 
       function handleRotation(event) {

@@ -53,8 +53,6 @@ function Button({ children }) {
       vec.set(zoom ? 25 : 10, zoom ? 2 : 5, zoom ? 0 : 10),
       step
     );
-    state.camera.lookAt(0, 0, 0);
-    state.camera.updateProjectionMatrix();
     light.current.position.lerp(
       vec.set(zoom ? 1 : 0, zoom ? 3 : 8, zoom ? 3 : 5),
       step

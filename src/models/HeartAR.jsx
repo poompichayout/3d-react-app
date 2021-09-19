@@ -12,6 +12,7 @@ export default function HeartAR({
   xOption,
   zdegree,
   xdegree,
+  yDefault,
   ...props
 }) {
   const MathUtils = THREE.MathUtils;
@@ -22,38 +23,27 @@ export default function HeartAR({
     const step = 0.1;
     const model = group.current;
     if (option === "RAO")
-      model.rotation.y = MathUtils.lerp(
-        model.rotation.y,
-        (Math.PI / 180) * zdegree,
-        step
-      );
+      model.rotation.y = MathUtils.lerp(model.rotation.y, (Math.PI / 180) * zdegree + yDefault, step);
     else if (option === "LAO") {
-      model.rotation.y = MathUtils.lerp(
-        model.rotation.y,
-        (-Math.PI / 180) * zdegree,
-        step
-      );
+      model.rotation.y = MathUtils.lerp(model.rotation.y, (-Math.PI / 180) * zdegree + yDefault, step);
     } else {
-      model.rotation.z = MathUtils.lerp(model.rotation.z, 0, step);
+      model.rotation.y = MathUtils.lerp(model.rotation.y, yDefault, step);
     }
 
     const subModel = group.current;
-    if (xOption === "CAUDAL")
-      subModel.rotation.z = MathUtils.lerp(
-        subModel.rotation.z,
-        (Math.PI / 180) * xdegree,
-        step
-      );
-    else if (xOption === "CRANIAL")
-      subModel.rotation.z = MathUtils.lerp(
-        subModel.rotation.z,
-        (-Math.PI / 180) * xdegree,
-        step
-      );
-    else subModel.rotation.x = MathUtils.lerp(subModel.rotation.x, 0, step);
+    subModel.rotation.order = "ZYX";
+    if (xOption === "CAUDAL"){
+      subModel.rotation.z = MathUtils.lerp(subModel.rotation.z, (Math.PI / 180) * xdegree, step);
+      // subModel.rotation.x = MathUtils.lerp(subModel.rotation.x, (-Math.PI / 180) * xdegree, step);
+    }
+    else if (xOption === "CRANIAL") {
+      subModel.rotation.z = MathUtils.lerp(subModel.rotation.z, (-Math.PI / 180) * xdegree, step);
+      //subModel.rotation.x = MathUtils.lerp(subModel.rotation.x, (Math.PI / 180) * xdegree, step);
+    }
+    else subModel.rotation.z = MathUtils.lerp(subModel.rotation.z, 0, step);
   });
   return (
-    <group ref={group} {...props} dispose={null}>
+    <group ref={group} {...props} dispose={null} rotation={[0, yDefault, 0]}>
       <mesh
         geometry={nodes.aorta_new.geometry}
         material={materials.red}

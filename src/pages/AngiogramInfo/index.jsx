@@ -21,9 +21,9 @@ const AngiogramInfo = () => {
         <Button
           type="primary"
           style={{ marginTop: "2em" }}
-          onClick={() => navigate("/app/angiogram")}
+          onClick={() => navigate(-1)}
         >
-          Back To Angiogram Model
+          Back
         </Button>
       </Col>
     </RowStyled>

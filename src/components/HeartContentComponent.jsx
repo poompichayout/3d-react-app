@@ -82,6 +82,7 @@ const HeartContentComponent = ({ type, ...props }) => {
               <b>Location:</b>{" "}
               {content?.location.map((value, index) => (
                 <Typography.Paragraph
+                key={index}
                   style={{
                     marginBottom: "0",
                     textAlign: "justify",
@@ -163,7 +164,7 @@ const HeartContentComponent = ({ type, ...props }) => {
           <Col xs={24} align="right">
             <Row justify="center" style={{ marginTop: "2em" }}>
               {content.picture_path?.map((value, index) => (
-                <Col xs={24} md={12}>
+                <Col xs={24} md={12} key={index}>
                   <Image
                     width={"90%"}
                     src={

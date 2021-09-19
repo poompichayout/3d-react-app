@@ -76,6 +76,7 @@ const Angiogram = () => {
             />
             <HeartAR
               position={[-2, 4, -5]}
+              yDefault={Math.PI / 3.5}
               option={turnOption}
               zdegree={zDegree}
               xOption={x}
@@ -131,10 +132,11 @@ const Angiogram = () => {
               </Typography.Title>
               <Slider
                 disabled={turnOption === "AP"}
-                min={1}
+                min={0}
                 max={90}
-                defaultValue={zDegree}
-                value={zDegree}
+                marks={raolaoMark}
+                defaultValue={turnOption === "AP"? 0:zDegree}
+                value={turnOption === "AP"? 0:zDegree}
                 onChange={(value) => {
                   setZDegree(value);
                   dispatch({
@@ -144,12 +146,14 @@ const Angiogram = () => {
                   });
                 }}
               />
-              <Typography.Title level={3}>
+              <Typography.Title level={3} style={{marginTop: "2em"}}>
                 {x + " " + xDegree + "°"}
               </Typography.Title>
               <Slider
-                min={1}
-                max={x === "CRANIAL" ? 25 : 60}
+                min={0}
+                max={45}
+                step={1}
+                marks={marks}
                 defaultValue={xDegree}
                 value={xDegree}
                 onChange={(value) => {
@@ -183,6 +187,19 @@ const Angiogram = () => {
       />
     </div>
   );
+};
+
+const marks = {
+  10: '10°',
+  20: '20°',
+  30: '30°',
+  40: "40°"
+};
+
+const raolaoMark = {
+  30: '30°',
+  45: "45°",
+  60: "60°"
 };
 
 const RowStyled = styled(Row)`

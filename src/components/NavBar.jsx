@@ -47,7 +47,7 @@ const NavBar = () => {
               <Menu.Item
                 key="home"
                 icon={<HomeOutlined />}
-                onClick={() => navigate("/")}
+                onClick={(e) => {navigate("/"); setVisible(false); setSelectedKeys(e.key);}}
               >
                 Cardiac Catherization
               </Menu.Item>
