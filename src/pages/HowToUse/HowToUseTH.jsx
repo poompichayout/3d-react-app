@@ -40,7 +40,7 @@ const HowToUseTH = () => {
                   เลือก Degree Angle
                   <ul style={{ ...paddingLeft, listStyleType: "circle" }}>
                     <li>มุม Angiographic View ตั้งแต่ 0 ถึง 90 องศา</li>
-                    <li>มุม Angulation ตั้งแต่ 0 ถึง 25 องศา</li>
+                    <li>มุม Angulation ตั้งแต่ 0 ถึง 45 องศา</li>
                   </ul>
                 </li>
               </ol>

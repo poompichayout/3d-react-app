@@ -39,7 +39,7 @@ const HowToUseEN = () => {
                   Select Degree Angle
                   <ul style={{ ...paddingLeft, listStyleType: "circle" }}>
                     <li>For angiographic view; from 0 to 90 degree</li>
-                    <li>For angulation; from 0 to 25 degree</li>
+                    <li>For angulation; from 0 to 45 degree</li>
                   </ul>
                 </li>
               </ol>

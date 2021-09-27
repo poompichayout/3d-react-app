@@ -49,7 +49,7 @@ const Vassel = () => {
       <RowStyled justify="center">
         <Col xs={24} sm={15} md={15} style={{ minHeight: "60vh" }}>
           <Tabs defaultActiveKey="1" centered style={{ height: "100%" }}>
-            <TabPane tab="Right Dominant" key="1" style={{ height: "60vh" }}>
+            <StyledTabPane tab="Right Dominant" key="1" style={{ height: "60vh" }}>
               <HeartCanvas hovered={hovered}>
                 <NewRightHeart
                   position={[0, 0.5, 0]}
@@ -58,8 +58,8 @@ const Vassel = () => {
                   onHover={onHover}
                 />
               </HeartCanvas>
-            </TabPane>
-            <TabPane tab="Left Dominant" key="2" style={{ height: "60vh" }}>
+            </StyledTabPane>
+            <StyledTabPane tab="Left Dominant" key="2" style={{ height: "60vh" }}>
               <HeartCanvas hovered={hovered}>
                 <LeftHeart
                   position={[0, 0.5, 0]}
@@ -68,8 +68,8 @@ const Vassel = () => {
                   onHover={onHover}
                 />
               </HeartCanvas>
-            </TabPane>
-            <TabPane tab="Co Dominant" key="3" style={{ height: "60vh" }}>
+            </StyledTabPane>
+            <StyledTabPane tab="Co Dominant" key="3" style={{ height: "60vh" }}>
               <HeartCanvas hovered={hovered}>
                 <CoHeart
                   position={[0, 0.5, 0]}
@@ -78,7 +78,7 @@ const Vassel = () => {
                   onHover={onHover}
                 />
               </HeartCanvas>
-            </TabPane>
+            </StyledTabPane>
           </Tabs>
         </Col>
         <Col xs={24} md={15}>
@@ -131,6 +131,13 @@ const RowStyled = styled(Row)`
   padding-bottom: 4em;
   padding-left: 1em;
   padding-right: 1em;
+`;
+
+const StyledTabPane = styled(TabPane)`
+  @media only screen and (min-width: 890px) {
+    min-height: 80vh;
+  }
+  min-height: 60vh;
 `;
 
 const leftDataSource = [

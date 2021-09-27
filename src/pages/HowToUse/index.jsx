@@ -61,7 +61,7 @@ function HowToUse() {
                 marginTop: "2em",
               }}
             >
-              <YouTube videoId="eplGvr1x760" opts={opts} />
+              <YouTube videoId="Y2cYii4Mbz0" opts={opts} />
             </Col>
           </Row>
           <Row>{lang ? <HowToUseEN /> : <HowToUseTH />}</Row>

@@ -77,6 +77,7 @@ const NavBar = () => {
             setVisible={setVisible}
             setSelectedKeys={setSelectedKeys}
             selectedKeys={activeKeys}
+            id="eiei"
           />
         </Col>
       </NotHiddenRow>
@@ -105,14 +106,19 @@ const MobileRow = styled(Row)`
     display: flex;
     margin-top: 0.5em;
   }
-
-  display: none;
 `;
 
 const NotHiddenRow = styled(Row)`
   @media only screen and (max-width: 890px) {
-    display: none;
+    .ant-col {
+      display: none;
+    }
   }
+
+  #eiei {
+    display: block !important;
+  }
+
 `;
 
 export default NavBar;
